@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cuando Dejé de Correr Empecé a Vivir — Voz y Huella de Mujer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    .post-title, .post-intro, .post-meta, .post-category { opacity: 0; }
+    html.lenis { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto; }
     :root {
       --terracota:       #C4876B;
       --terracota-light: #E8C4B0;
@@ -448,7 +452,7 @@
 
       <p>Correr había sido, durante muchos años, mi forma de estar en el mundo. Correr para llegar. Correr para cumplir. Correr para demostrar. Correr para no fallar. Y en esa carrera —que parecía necesaria, incluso virtuosa— dejé muchas cosas atrás: amaneceres sin mirar, silencios sin escuchar, emociones sin habitar, un cuerpo que pedía pausas y una vida que me esperaba con paciencia.</p>
 
-      <div class="pull-quote">
+      <div class="pull-quote" data-aos="fade-right" data-aos-duration="800">
         <p>"Un día entendí algo simple y profundo: la vida no me estaba pidiendo más velocidad, me estaba pidiendo presencia."</p>
       </div>
 
@@ -458,7 +462,7 @@
 
       <p>Lo que nadie te dice sobre vivir corriendo es que el precio no siempre se cobra en fracasos. A veces se cobra en victorias vacías. Llegas a la meta y no sientes nada. Logras lo que querías y te preguntas: ¿y ahora qué? Porque corrías tan rápido que nunca te detuviste a preguntarte si eso era realmente lo que querías.</p>
 
-      <div class="highlight-box">
+      <div class="highlight-box" data-aos="fade-up" data-aos-duration="700">
         <h3>Lo que dejé de perder cuando dejé de correr</h3>
         <ul>
           <li>Las conversaciones que duran más de lo que "debería"</li>
@@ -477,7 +481,7 @@
 
       <p>Es lavarte los dientes sin planear la semana. Es escuchar a quien te habla sin preparar ya tu respuesta. Es sentir tristeza sin apresurarla, y alegría sin desconfiar de ella. Es, como diría mi corazón hace unos años si hubiera sabido expresarse: <em>"Oye, aquí estoy. ¿Me ves?"</em></p>
 
-      <div class="pull-quote">
+      <div class="pull-quote" data-aos="fade-right" data-aos-duration="800">
         <p>"Dejar de correr no fue rendirse. Fue elegir. Y esa elección lo cambió todo."</p>
       </div>
 
@@ -518,7 +522,7 @@
     <div class="related-inner">
       <h2>Quizás también te resuene…</h2>
       <div class="related-grid">
-        <a href="#" class="related-card">
+        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="0">
           <div class="related-card-img rc1">
             "¿Y si no encajar es el principio de encontrarte?"
           </div>
@@ -527,7 +531,7 @@
             <p>Hay momentos en que miras a tu alrededor y sientes que eres demasiado, o demasiado poco...</p>
           </div>
         </a>
-        <a href="#" class="related-card">
+        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="150">
           <div class="related-card-img rc2">
             "El descanso no es un premio. Es un derecho."
           </div>
@@ -536,7 +540,7 @@
             <p>¿Cuántas veces te has sentido culpable por simplemente descansar?</p>
           </div>
         </a>
-        <a href="#" class="related-card">
+        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="300">
           <div class="related-card-img rc3">
             "Tu historia importa, aunque no la vea nadie más."
           </div>
@@ -554,7 +558,7 @@
     <div class="comments-inner">
       <h2>Lo que dice la comunidad (57 comentarios)</h2>
 
-      <div class="comment">
+      <div class="comment" data-aos="fade-up" data-aos-delay="0">
         <div class="comment-header">
           <div class="comment-avatar ca1">🌸</div>
           <span class="comment-name">María Fernanda</span>
@@ -563,7 +567,7 @@
         <p>Cada lunes espero este espacio. Hoy me hizo llorar — de esas lágrimas buenas. Gracias por poner en palabras lo que yo no podía decir.</p>
       </div>
 
-      <div class="comment">
+      <div class="comment" data-aos="fade-up" data-aos-delay="150">
         <div class="comment-header">
           <div class="comment-avatar ca2">🌿</div>
           <span class="comment-name">Catalina R.</span>
@@ -572,7 +576,7 @@
         <p>Llevo meses sintiéndome exactamente así. Correr sin saber bien para qué. Hoy algo hizo clic. Gracias.</p>
       </div>
 
-      <div class="comment">
+      <div class="comment" data-aos="fade-up" data-aos-delay="300">
         <div class="comment-header">
           <div class="comment-avatar ca3">✨</div>
           <span class="comment-name">Laura M.</span>
@@ -611,5 +615,59 @@
     <p class="footer-copy">© 2026 Voz y Huella de Mujer · Todos los derechos reservados</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+    // ── 1. LENIS — scroll suave ──
+    const lenis = new Lenis({ lerp: 0.08, smooth: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // ── 2. GSAP — entrada del hero del post ──
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl
+      .to('.post-category', { opacity: 1, y: 0, duration: 0.6, from: { y: 16 } })
+      .to('.post-title',    { opacity: 1, y: 0, duration: 1.0, from: { y: 50 } }, '-=0.3')
+      .to('.post-intro',    { opacity: 1, y: 0, duration: 0.7, from: { y: 20 } }, '-=0.5')
+      .to('.post-meta',     { opacity: 1, y: 0, duration: 0.6, from: { y: 16 } }, '-=0.4');
+
+    // ── 3. Parallax en el banner ──
+    gsap.to('.post-banner', {
+      yPercent: -15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.post-banner',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // ── 4. Línea de progreso de lectura ──
+    const progress = document.createElement('div');
+    progress.style.cssText = `
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, #C4876B, #D4A97A);
+      z-index: 9999; transition: width 0.1s linear;
+    `;
+    document.body.appendChild(progress);
+    lenis.on('scroll', ({ progress: p }) => {
+      progress.style.width = (p * 100) + '%';
+    });
+
+    // ── 5. AOS ──
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+  </script>
 </body>
 </html>

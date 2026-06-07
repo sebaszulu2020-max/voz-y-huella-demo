@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voz y Huella de Mujer</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    /* animaciones base */
+    .hero h1, .hero-eyebrow, .hero-desc, .hero-cta { opacity: 0; }
+    html.lenis { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto; }
+    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
     /* ─── SISTEMA DE MARCA ─── */
     :root {
       --terracota:   #C4876B;
@@ -455,6 +461,27 @@
       .redes-inner { flex-direction: column; }
       .hero-stats { flex-wrap: wrap; }
     }
+
+    /* hover mejorado en cards */
+    .post-card { will-change: transform; }
+    .featured-img { overflow: hidden; }
+    .featured-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(0,0,0,0); transition: background 0.3s;
+    }
+    .featured-img:hover::after { background: rgba(0,0,0,0.04); }
+
+    /* línea decorativa animada en section-label */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 0; height: 2px; background: var(--terracota);
+      transition: width 0.6s ease;
+    }
+    [data-aos].aos-animate .section-label::before,
+    .section-label.animated::before { width: 28px; }
   </style>
 </head>
 <body>
@@ -487,15 +514,15 @@
         <a href="#sobre-mi" class="btn-outline">Conocer mi historia</a>
       </div>
       <div class="hero-stats">
-        <div class="stat">
+        <div class="stat" data-aos="fade-up" data-aos-delay="600">
           <span class="stat-num">50+</span>
           <span class="stat-label">Reflexiones publicadas</span>
         </div>
-        <div class="stat">
+        <div class="stat" data-aos="fade-up" data-aos-delay="750">
           <span class="stat-num">2 años</span>
           <span class="stat-label">Escribiendo cada semana</span>
         </div>
-        <div class="stat">
+        <div class="stat" data-aos="fade-up" data-aos-delay="900">
           <span class="stat-num">🌍</span>
           <span class="stat-label">Lectoras de todo el mundo</span>
         </div>
@@ -506,9 +533,9 @@
   <!-- POST DESTACADO -->
   <section class="featured">
     <div class="section-inner">
-      <p class="section-label">Post destacado</p>
+      <p class="section-label" data-aos="fade-right">Post destacado</p>
       <div class="featured-grid">
-        <div class="featured-img">
+        <div class="featured-img" data-aos="fade-right" data-aos-duration="900">
           <p class="featured-img-text">"La vida no me pedía más velocidad.<br>Me pedía presencia."</p>
         </div>
         <div class="featured-content">
@@ -538,7 +565,7 @@
       <p class="section-sub">Cada lunes, un espacio para que te detengas, respires y te escuches.</p>
       <div class="posts-grid">
 
-        <article class="post-card">
+        <article class="post-card" data-aos="fade-up" data-aos-delay="0">
           <div class="post-card-img t2">
             "¿Y si no encajar<br>es exactamente donde empieza tu camino?"
           </div>
@@ -553,7 +580,7 @@
           </div>
         </article>
 
-        <article class="post-card">
+        <article class="post-card" data-aos="fade-up" data-aos-delay="150">
           <div class="post-card-img t1">
             "El descanso no es<br>un premio. Es un derecho."
           </div>
@@ -568,7 +595,7 @@
           </div>
         </article>
 
-        <article class="post-card">
+        <article class="post-card" data-aos="fade-up" data-aos-delay="300">
           <div class="post-card-img t3">
             "Tu historia importa.<br>Aunque no la vea nadie más."
           </div>
@@ -589,15 +616,15 @@
 
   <!-- CITA -->
   <div class="cita-section">
-    <p class="cita-texto">"Dejar de correr no significó renunciar a mis sueños. Significó aprender a caminarlos."</p>
-    <p class="cita-autor">— Voz y Huella de Mujer</p>
+    <p class="cita-texto" data-aos="zoom-in" data-aos-duration="1000">"Dejar de correr no significó renunciar a mis sueños. Significó aprender a caminarlos."</p>
+    <p class="cita-autor" data-aos="fade-up" data-aos-delay="400">— Voz y Huella de Mujer</p>
   </div>
 
   <!-- SOBRE MÍ -->
   <section class="about" id="sobre-mi">
     <div class="section-inner">
       <div class="about-grid">
-        <div class="about-photo">
+        <div class="about-photo" data-aos="fade-right" data-aos-duration="1000">
           <div class="about-photo-placeholder">
             <div class="about-photo-icon"></div>
             <p class="about-photo-text">Tu foto aquí 🤍</p>
@@ -690,5 +717,57 @@
     </div>
   </footer>
 
+  <!-- SCRIPTS DE ANIMACIÓN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+    // ── 1. LENIS — scroll ultra suave ──
+    const lenis = new Lenis({ lerp: 0.08, smooth: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // ── 2. GSAP — animación de entrada del hero ──
+    gsap.registerPlugin(ScrollTrigger);
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    heroTl
+      .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.7, from: { y: 20 } })
+      .to('.hero h1',       { opacity: 1, y: 0, duration: 0.9, from: { y: 40 } }, '-=0.4')
+      .to('.hero-desc',     { opacity: 1, y: 0, duration: 0.7, from: { y: 20 } }, '-=0.5')
+      .to('.hero-cta',      { opacity: 1, y: 0, duration: 0.6, from: { y: 20 } }, '-=0.4');
+
+    // ── 3. GSAP parallax en la franja de cita ──
+    gsap.to('.cita-section', {
+      backgroundPositionY: '30%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.cita-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // ── 4. Línea animada en section-labels ──
+    document.querySelectorAll('.section-label').forEach(el => {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        onEnter: () => el.classList.add('animated')
+      });
+    });
+
+    // ── 5. AOS — animaciones en scroll ──
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+  </script>
 </body>
 </html>
