@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voz y Huella de Mujer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── SISTEMA DE MARCA ─── */
+    :root {
+      --terracota:   #C4876B;
+      --terracota-light: #E8C4B0;
+      --salvia:      #8B9E8A;
+      --salvia-light:#C5D4C4;
+      --dorado:      #D4A97A;
+      --crema:       #FDF8F3;
+      --crema-oscura:#F5EDE2;
+      --texto:       #3D3530;
+      --texto-suave: #8A7E78;
+      --blanco:      #FFFFFF;
+
+      --font-titulo: 'Playfair Display', Georgia, serif;
+      --font-cuerpo: 'Lato', sans-serif;
+      --font-cita:   'Cormorant Garamond', Georgia, serif;
+
+      --radio: 4px;
+      --sombra: 0 4px 24px rgba(61,53,48,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-cuerpo);
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: var(--crema);
+      border-bottom: 1px solid var(--crema-oscura);
+      position: sticky; top: 0; z-index: 100;
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      font-family: var(--font-titulo);
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--terracota);
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+    .logo span { display: block; font-size: 0.65rem; font-weight: 300;
+      font-family: var(--font-cuerpo); color: var(--texto-suave);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--texto-suave); font-weight: 700;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracota); }
+    .btn-nav {
+      background: var(--terracota); color: var(--blanco) !important;
+      padding: 0.5rem 1.25rem; border-radius: 2rem;
+      font-size: 0.8rem !important; transition: background 0.2s !important;
+    }
+    .btn-nav:hover { background: #a8694f !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--crema-oscura) 0%, var(--crema) 60%);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--terracota-light) 0%, transparent 70%);
+      opacity: 0.35;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, var(--salvia-light) 0%, transparent 70%);
+      opacity: 0.4;
+    }
+    .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracota); font-weight: 700; margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-titulo);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 600; line-height: 1.15;
+      color: var(--texto); margin-bottom: 1.5rem;
+    }
+    .hero h1 em { color: var(--terracota); font-style: italic; }
+    .hero-desc {
+      font-size: 1.1rem; color: var(--texto-suave);
+      max-width: 520px; margin: 0 auto 2.5rem;
+      font-weight: 300; line-height: 1.8;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--terracota); color: var(--blanco);
+      padding: 0.85rem 2rem; border-radius: 2rem;
+      font-family: var(--font-cuerpo); font-size: 0.9rem;
+      font-weight: 700; letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #a8694f; transform: translateY(-1px); }
+    .btn-outline {
+      border: 1.5px solid var(--terracota); color: var(--terracota);
+      padding: 0.85rem 2rem; border-radius: 2rem;
+      font-family: var(--font-cuerpo); font-size: 0.9rem;
+      font-weight: 700; letter-spacing: 0.04em;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: var(--terracota); color: var(--blanco); transform: translateY(-1px); }
+    .hero-stats {
+      display: flex; gap: 3rem; justify-content: center;
+      margin-top: 4rem; padding-top: 3rem;
+      border-top: 1px solid var(--crema-oscura);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: var(--font-titulo); font-size: 2rem;
+      font-weight: 700; color: var(--terracota); display: block;
+    }
+    .stat-label {
+      font-size: 0.75rem; color: var(--texto-suave);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    /* ─── SECCIÓN GENÉRICA ─── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracota); font-weight: 700; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600; line-height: 1.2;
+      margin-bottom: 1rem; color: var(--texto);
+    }
+    .section-sub {
+      color: var(--texto-suave); font-size: 1rem;
+      max-width: 520px; font-weight: 300; margin-bottom: 3rem;
+    }
+
+    /* ─── POST DESTACADO ─── */
+    .featured { background: var(--blanco); }
+    .featured-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      align-items: center;
+    }
+    .featured-img {
+      border-radius: 12px; overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--terracota-light), var(--salvia-light));
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .featured-img-text {
+      font-family: var(--font-cita);
+      font-size: 1.6rem; font-style: italic;
+      color: var(--blanco); text-align: center; padding: 2rem;
+      text-shadow: 0 2px 12px rgba(61,53,48,0.3); line-height: 1.4;
+    }
+    .featured-tag {
+      display: inline-block; background: var(--crema-oscura);
+      color: var(--terracota); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.3rem 0.8rem; border-radius: 2rem; margin-bottom: 1.25rem;
+    }
+    .featured-title {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 600; line-height: 1.2;
+      margin-bottom: 1rem; color: var(--texto);
+    }
+    .featured-excerpt {
+      color: var(--texto-suave); font-size: 1rem;
+      font-weight: 300; line-height: 1.9; margin-bottom: 1.5rem;
+    }
+    .featured-meta {
+      display: flex; align-items: center; gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .meta-date { font-size: 0.8rem; color: var(--texto-suave); }
+    .meta-read { font-size: 0.8rem; color: var(--salvia); font-weight: 700; }
+    .btn-leer {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--terracota); font-weight: 700; font-size: 0.9rem;
+      border-bottom: 1.5px solid var(--terracota-light);
+      padding-bottom: 2px; transition: all 0.2s;
+    }
+    .btn-leer:hover { border-color: var(--terracota); }
+    .btn-leer::after { content: '→'; transition: transform 0.2s; }
+    .btn-leer:hover::after { transform: translateX(4px); }
+
+    /* ─── GRID DE POSTS ─── */
+    .posts { background: var(--crema); }
+    .posts-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    }
+    .post-card {
+      background: var(--blanco); border-radius: 12px;
+      overflow: hidden; box-shadow: var(--sombra);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,53,48,0.12); }
+    .post-card-img {
+      aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-cita); font-style: italic;
+      font-size: 1rem; color: var(--blanco);
+      text-align: center; padding: 1.5rem;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.2);
+    }
+    .post-card-img.t1 { background: linear-gradient(135deg, #C4876B, #D4A97A); }
+    .post-card-img.t2 { background: linear-gradient(135deg, #8B9E8A, #C5D4C4 ); color: var(--texto); text-shadow: none; }
+    .post-card-img.t3 { background: linear-gradient(135deg, #9E8B76, #C4876B); }
+    .post-card-body { padding: 1.75rem; }
+    .post-card-tag {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--terracota); margin-bottom: 0.75rem;
+    }
+    .post-card-title {
+      font-family: var(--font-titulo);
+      font-size: 1.15rem; font-weight: 600;
+      line-height: 1.3; margin-bottom: 0.75rem; color: var(--texto);
+    }
+    .post-card-excerpt {
+      font-size: 0.88rem; color: var(--texto-suave);
+      font-weight: 300; line-height: 1.8; margin-bottom: 1.25rem;
+    }
+    .post-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1rem; border-top: 1px solid var(--crema-oscura);
+    }
+    .post-card-date { font-size: 0.75rem; color: var(--texto-suave); }
+    .post-card-link {
+      font-size: 0.78rem; font-weight: 700; color: var(--terracota);
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .post-card-link::after { content: '→'; }
+
+    /* ─── CITA ─── */
+    .cita-section {
+      background: var(--terracota);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .cita-texto {
+      font-family: var(--font-cita);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-style: italic;
+      color: var(--blanco);
+      max-width: 760px; margin: 0 auto 1.5rem;
+      line-height: 1.4;
+    }
+    .cita-autor {
+      font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--terracota-light); font-weight: 700;
+    }
+
+    /* ─── SOBRE MÍ ─── */
+    .about { background: var(--blanco); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-photo {
+      aspect-ratio: 3/4; border-radius: 120px 120px 12px 12px;
+      background: linear-gradient(160deg, var(--terracota-light) 0%, var(--salvia-light) 100%);
+      display: flex; align-items: flex-end; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .about-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem;
+    }
+    .about-photo-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--terracota); opacity: 0.4;
+    }
+    .about-photo-text {
+      font-family: var(--font-cita); font-style: italic;
+      font-size: 1rem; color: var(--texto); opacity: 0.5;
+    }
+    .about-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--crema-oscura); padding: 0.4rem 1rem;
+      border-radius: 2rem; margin-bottom: 1.5rem;
+    }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--salvia); }
+    .badge-text { font-size: 0.75rem; color: var(--texto-suave); font-weight: 700; letter-spacing: 0.08em; }
+    .about h2 {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      font-weight: 600; line-height: 1.2;
+      margin-bottom: 1.5rem; color: var(--texto);
+    }
+    .about h2 em { color: var(--terracota); font-style: italic; }
+    .about p {
+      color: var(--texto-suave); font-weight: 300; line-height: 1.9;
+      margin-bottom: 1.25rem; font-size: 1rem;
+    }
+    .about-valores {
+      display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0;
+    }
+    .valor {
+      background: var(--crema-oscura); color: var(--terracota);
+      padding: 0.35rem 0.9rem; border-radius: 2rem;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+    }
+
+    /* ─── COMUNIDAD / NEWSLETTER ─── */
+    .comunidad { background: var(--crema-oscura); text-align: center; }
+    .comunidad-inner { max-width: 600px; margin: 0 auto; }
+    .comunidad-icon {
+      font-size: 2.5rem; margin-bottom: 1.5rem; display: block;
+    }
+    .comunidad h2 {
+      font-family: var(--font-titulo);
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 600; margin-bottom: 1rem;
+    }
+    .comunidad p {
+      color: var(--texto-suave); font-weight: 300;
+      line-height: 1.8; margin-bottom: 2rem;
+    }
+    .form-row {
+      display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto;
+    }
+    .form-input {
+      flex: 1; padding: 0.85rem 1.25rem;
+      border: 1.5px solid var(--crema-oscura);
+      border-radius: 2rem; font-family: var(--font-cuerpo);
+      font-size: 0.9rem; background: var(--blanco);
+      color: var(--texto); outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: var(--terracota); }
+    .form-input::placeholder { color: var(--texto-suave); }
+    .comunidad-nota {
+      font-size: 0.75rem; color: var(--texto-suave);
+      margin-top: 1rem; font-weight: 300;
+    }
+
+    /* ─── REDES ─── */
+    .redes { background: var(--blanco); padding: 3rem 2rem; }
+    .redes-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 2rem;
+    }
+    .redes-texto h3 {
+      font-family: var(--font-titulo); font-size: 1.3rem;
+      font-weight: 600; margin-bottom: 0.3rem;
+    }
+    .redes-texto p { font-size: 0.88rem; color: var(--texto-suave); font-weight: 300; }
+    .redes-iconos { display: flex; gap: 1rem; }
+    .red-btn {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.25rem; border-radius: 2rem;
+      font-size: 0.82rem; font-weight: 700;
+      transition: all 0.2s;
+    }
+    .red-ig { background: #F3E8E2; color: #C4876B; }
+    .red-ig:hover { background: #C4876B; color: white; }
+    .red-tt { background: #E8F0E8; color: #5A7A59; }
+    .red-tt:hover { background: #8B9E8A; color: white; }
+    .red-fb { background: #E8EDF3; color: #4A6FA5; }
+    .red-fb:hover { background: #4A6FA5; color: white; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--texto); color: var(--crema-oscura);
+      padding: 4rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-logo {
+      font-family: var(--font-titulo); font-size: 1.2rem;
+      color: var(--crema); margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: 0.85rem; color: var(--texto-suave);
+      font-weight: 300; line-height: 1.8;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--terracota); font-weight: 700; margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a {
+      font-size: 0.85rem; color: var(--texto-suave);
+      font-weight: 300; transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--terracota); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.78rem; color: var(--texto-suave); font-weight: 300; }
+    .footer-tagline {
+      font-family: var(--font-cita); font-style: italic;
+      font-size: 0.95rem; color: var(--terracota-light);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .form-row { flex-direction: column; }
+      .redes-inner { flex-direction: column; }
+      .hero-stats { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        Voz y Huella de Mujer
+        <span>Tu voz · Tu huella · Tu historia</span>
+      </a>
+      <div class="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#">Reflexiones</a>
+        <a href="#">Sobre mí</a>
+        <a href="#">Pídeme un consejo</a>
+        <a href="#comunidad" class="btn-nav">Únete</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">✦ Nuevo post cada lunes</p>
+      <h1>Un espacio para mujeres que eligen <em>vivir con presencia</em></h1>
+      <p class="hero-desc">Reflexiones honestas sobre el arte de soltar la prisa, encontrarte contigo misma y dejar tu huella en el mundo.</p>
+      <div class="hero-cta">
+        <a href="post.html" class="btn-primary">Leer el último post</a>
+        <a href="#sobre-mi" class="btn-outline">Conocer mi historia</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Reflexiones publicadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2 años</span>
+          <span class="stat-label">Escribiendo cada semana</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">🌍</span>
+          <span class="stat-label">Lectoras de todo el mundo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POST DESTACADO -->
+  <section class="featured">
+    <div class="section-inner">
+      <p class="section-label">Post destacado</p>
+      <div class="featured-grid">
+        <div class="featured-img">
+          <p class="featured-img-text">"La vida no me pedía más velocidad.<br>Me pedía presencia."</p>
+        </div>
+        <div class="featured-content">
+          <span class="featured-tag">Presencia · Junio 2026</span>
+          <h2 class="featured-title">Cuando Dejé de Correr Empecé a Vivir</h2>
+          <div class="featured-meta">
+            <span class="meta-date">Lunes, 1 de junio de 2026</span>
+            <span class="meta-read">5 min de lectura</span>
+          </div>
+          <p class="featured-excerpt">
+            No recuerdo el día exacto en que dejé de correr. No hubo un anuncio, ni una decisión dramática, ni una fecha marcada en el calendario. Fue más bien un susurro interno que se fue haciendo claro con el tiempo.
+          </p>
+          <p class="featured-excerpt">
+            Correr había sido, durante muchos años, mi forma de estar en el mundo. Correr para llegar. Correr para cumplir. Correr para demostrar. Y en esa carrera —que parecía necesaria, incluso virtuosa— dejé muchas cosas atrás: amaneceres sin mirar, silencios sin escuchar, emociones sin habitar...
+          </p>
+          <a href="post.html" class="btn-leer">Leer completo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID DE POSTS -->
+  <section class="posts">
+    <div class="section-inner">
+      <p class="section-label">Reflexiones recientes</p>
+      <h2 class="section-title">Últimas palabras de la semana</h2>
+      <p class="section-sub">Cada lunes, un espacio para que te detengas, respires y te escuches.</p>
+      <div class="posts-grid">
+
+        <article class="post-card">
+          <div class="post-card-img t2">
+            "¿Y si no encajar<br>es exactamente donde empieza tu camino?"
+          </div>
+          <div class="post-card-body">
+            <p class="post-card-tag">Identidad · Mayo 2026</p>
+            <h3 class="post-card-title">¿Cuándo No Encajas?</h3>
+            <p class="post-card-excerpt">Hay momentos en la vida en que miras a tu alrededor y sientes que eres demasiado, o demasiado poco. Ni de aquí ni de allá. Y en ese "no encajar" late algo importante...</p>
+            <div class="post-card-footer">
+              <span class="post-card-date">Mayo 26, 2026</span>
+              <a href="post.html" class="post-card-link">Leer</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-card-img t1">
+            "El descanso no es<br>un premio. Es un derecho."
+          </div>
+          <div class="post-card-body">
+            <p class="post-card-tag">Paz · Mayo 2026</p>
+            <h3 class="post-card-title">El Derecho a No Hacer: Romper la Culpa y Recuperar la Paz</h3>
+            <p class="post-card-excerpt">¿Cuántas veces te has sentido culpable por simplemente descansar? Como si el valor de tu día dependiera únicamente de lo que produces...</p>
+            <div class="post-card-footer">
+              <span class="post-card-date">Mayo 19, 2026</span>
+              <a href="post.html" class="post-card-link">Leer</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-card-img t3">
+            "Tu historia importa.<br>Aunque no la vea nadie más."
+          </div>
+          <div class="post-card-body">
+            <p class="post-card-tag">Autoconocimiento · Mayo 2026</p>
+            <h3 class="post-card-title">El Silencio Que Habla</h3>
+            <p class="post-card-excerpt">Vivimos en un mundo que premia el ruido. Pero hay sabiduría profunda en quienes aprendieron a escuchar los silencios — los propios y los de los demás...</p>
+            <div class="post-card-footer">
+              <span class="post-card-date">Mayo 12, 2026</span>
+              <a href="post.html" class="post-card-link">Leer</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CITA -->
+  <div class="cita-section">
+    <p class="cita-texto">"Dejar de correr no significó renunciar a mis sueños. Significó aprender a caminarlos."</p>
+    <p class="cita-autor">— Voz y Huella de Mujer</p>
+  </div>
+
+  <!-- SOBRE MÍ -->
+  <section class="about" id="sobre-mi">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-photo">
+          <div class="about-photo-placeholder">
+            <div class="about-photo-icon"></div>
+            <p class="about-photo-text">Tu foto aquí 🤍</p>
+          </div>
+        </div>
+        <div>
+          <div class="about-badge">
+            <div class="badge-dot"></div>
+            <span class="badge-text">Escribiendo cada lunes desde 2025</span>
+          </div>
+          <h2>Hola, soy la voz detrás de <em>estas palabras</em></h2>
+          <p>Soy una mujer que un día entendió que la vida no se vive corriendo. Que hay belleza en detenerse, en escucharse, en dejar que las cosas florezcan a su propio ritmo.</p>
+          <p>Este espacio nació de la necesidad de compartir lo que aprendí en esos silencios. No soy psicóloga ni coach — soy una mujer común con experiencias reales que quizás resuenen en las tuyas.</p>
+          <p>Si llegaste aquí, creo que hay algo aquí para ti.</p>
+          <div class="about-valores">
+            <span class="valor">Presencia</span>
+            <span class="valor">Autenticidad</span>
+            <span class="valor">Cuidado</span>
+            <span class="valor">Constancia</span>
+            <span class="valor">Comunidad</span>
+          </div>
+          <a href="#comunidad" class="btn-primary">Únete a la comunidad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="comunidad" id="comunidad">
+    <div class="comunidad-inner">
+      <span class="comunidad-icon">🌿</span>
+      <h2 class="section-title">Recibe cada lunes en tu correo</h2>
+      <p>Una reflexión que dura 5 minutos y puede cambiar tu semana. Sin spam. Sin prisa. Solo palabras que abrazan.</p>
+      <div class="form-row">
+        <input type="email" class="form-input" placeholder="Tu correo electrónico">
+        <button class="btn-primary" style="white-space:nowrap">Quiero recibir</button>
+      </div>
+      <p class="comunidad-nota">✓ Puedes darte de baja en cualquier momento · ✓ Tu correo está seguro</p>
+    </div>
+  </section>
+
+  <!-- REDES -->
+  <div class="redes">
+    <div class="redes-inner">
+      <div class="redes-texto">
+        <h3>Sígueme en redes</h3>
+        <p>Videos cortos, frases y detrás de cada reflexión</p>
+      </div>
+      <div class="redes-iconos">
+        <a href="#" class="red-btn red-ig">📷 Instagram</a>
+        <a href="#" class="red-btn red-tt">🎵 TikTok</a>
+        <a href="#" class="red-btn red-fb">👥 Facebook</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">Voz y Huella de Mujer</div>
+          <p class="footer-desc">Un espacio para mujeres que están aprendiendo a vivir con más presencia y menos prisa. Cada lunes, una reflexión que te acompaña.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explorar</h4>
+          <ul>
+            <li><a href="#">Todas las reflexiones</a></li>
+            <li><a href="#">Presencia</a></li>
+            <li><a href="#">Identidad</a></li>
+            <li><a href="#">Relaciones</a></li>
+            <li><a href="#">Paz interior</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Conectar</h4>
+          <ul>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Pídeme un consejo</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Voz y Huella de Mujer · Todos los derechos reservados</p>
+        <p class="footer-tagline">"Tu voz. Tu huella. Tu historia."</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
