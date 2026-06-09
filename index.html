@@ -41,8 +41,13 @@
       transition: background .5s, box-shadow .5s, padding .5s; }
     nav.scrolled { background: rgba(250,247,244,0.9); backdrop-filter: blur(12px);
       box-shadow: 0 1px 24px rgba(70,32,92,0.07); padding: 0.4rem 2.5rem; }
-    .nav-logo img { height: 76px; width: auto; transition: height .5s; filter: drop-shadow(0 3px 10px rgba(94,45,121,0.18)); }
-    nav.scrolled .nav-logo img { height: 58px; }
+    .nav-logo { display: flex; align-items: center; justify-content: center;
+      width: 88px; height: 88px; border-radius: 50%; transition: all .5s;
+      background: radial-gradient(circle, rgba(255,255,255,0.92) 55%, rgba(255,255,255,0) 78%); }
+    .nav-logo img { height: 74px; width: auto; transition: height .5s;
+      filter: drop-shadow(0 2px 6px rgba(94,45,121,0.22)); }
+    nav.scrolled .nav-logo { width: 64px; height: 64px; background: transparent; }
+    nav.scrolled .nav-logo img { height: 54px; }
     .nav-links { display: flex; gap: 2.2rem; align-items: center; }
     .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--purpura-osc); font-weight: 700; opacity: 0.9; transition: opacity .3s, color .3s;
@@ -221,15 +226,9 @@
     </div>
   </nav>
 
-  <!-- HERO: banner full-width nítido + título tipográfico -->
+  <!-- HERO: banner con identidad, a todo el ancho y nítido -->
   <header class="hero">
-    <img src="assets/banner.jpg" alt="Mujer caminando hacia el amanecer dejando huellas en la arena" class="hero-banner">
-    <div class="hero-overlay">
-      <h1 class="hero-title">Voz <span class="y">y</span> Huella</h1>
-      <p class="hero-sub">de Mujer</p>
-      <p class="hero-tag">Cada mujer tiene una voz.<br>Cada vida deja una huella.</p>
-      <p class="hero-firma">by Yamile</p>
-    </div>
+    <img src="assets/banner.jpg" alt="Voz y Huella de Mujer — Cada mujer tiene una voz, cada vida deja una huella. by Yamile" class="hero-banner">
     <div class="hero-fade"></div>
   </header>
 
