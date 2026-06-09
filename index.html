@@ -175,7 +175,7 @@
       background: linear-gradient(160deg, var(--lavanda), var(--purpura-cl));
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem;
       box-shadow: 0 26px 60px rgba(70,32,92,0.16); position: relative; overflow: hidden; }
-    .sobre-foto::after { content:''; position:absolute; inset:0; background: radial-gradient(circle at 50% 28%, rgba(255,255,255,0.32), transparent 60%); }
+    .sobre-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .sobre-foto-emoji { font-size: 2.2rem; position: relative; z-index:1; }
     .sobre-foto-txt { font-family: var(--f-mano); font-size: 1.4rem; color: var(--purpura-osc); position: relative; z-index:1; }
     .sobre-firma { font-family: var(--f-mano); font-size: 2.3rem; color: var(--purpura); margin-bottom: 0.3rem; }
@@ -328,8 +328,7 @@
     <div class="wrap">
       <div class="sobre-grid">
         <div class="sobre-foto reveal">
-          <span class="sobre-foto-emoji">🤍</span>
-          <span class="sobre-foto-txt">la foto de Yamile</span>
+          <img src="assets/yamile.jpg" alt="Retrato de Yamile Alvear, fundadora de Voz y Huella de Mujer" loading="lazy">
         </div>
         <div class="reveal d1">
           <p class="sobre-firma">Hola, soy Yamile Alvear</p>
