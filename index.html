@@ -15,6 +15,7 @@
       --lavanda:      #D9C6E4;
       --lavanda-niebla:#F0E8F5;
       --dorado:       #C9A25F;
+      --dorado-texto: #97752E;
       --marfil:       #FAF7F4;
       --marfil-calido:#F5EEE9;
       --texto:        #4A4A4A;
@@ -69,31 +70,13 @@
     .hero-banner { width: 100%; display: block; }
     .hero-fade { position: absolute; bottom: -1px; left: 0; right: 0; height: 90px;
       background: linear-gradient(transparent, var(--marfil)); pointer-events: none; }
-    .hero-overlay { position: absolute; top: 50%; left: 58%; transform: translateY(-50%);
-      width: 38%; text-align: center; z-index: 3; }
-    .hero-title { font-family: var(--f-titulo); font-weight: 500; color: var(--purpura);
-      font-size: clamp(1.6rem, 4.4vw, 4rem); line-height: 1; letter-spacing: 0.01em;
-      text-shadow: 0 2px 24px rgba(250,247,244,0.7); }
-    .hero-title .y { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--purpura-cl); }
-    .hero-sub { font-family: var(--f-mano); font-weight: 600; color: var(--purpura);
-      font-size: clamp(1.2rem, 3.4vw, 3.2rem); line-height: 1; margin-top: 0.1em;
-      text-shadow: 0 2px 20px rgba(250,247,244,0.8); }
-    .hero-tag { font-family: var(--f-serif); font-style: italic; color: var(--purpura-osc);
-      font-size: clamp(0.7rem, 1.5vw, 1.25rem); margin-top: 1em; line-height: 1.4;
-      text-shadow: 0 1px 14px rgba(250,247,244,0.9); }
-    .hero-firma { font-family: var(--f-mano); color: var(--dorado);
-      font-size: clamp(0.85rem, 1.8vw, 1.6rem); margin-top: 0.5em; }
-    /* en móvil el banner se hace chico: el título va debajo, no encima */
-    @media (max-width: 760px) {
-      .hero-overlay { position: static; transform: none; width: 100%; padding: 1.8rem 1.5rem 0; left: 0; }
-      .hero-title { text-shadow: none; } .hero-sub, .hero-tag { text-shadow: none; }
-      .hero-fade { display: none; }
-    }
+    /* en móvil se usa el banner vertical (portada) — ver <picture> en el HTML */
+    @media (max-width: 760px) { .hero-fade { display: none; } }
 
     /* BIENVENIDA bajo el banner */
     .bienvenida { text-align: center; padding: 3.5rem 2rem 5rem; background: var(--marfil); position: relative; }
     .bienvenida-eyebrow { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--dorado); font-weight: 700; margin-bottom: 1.6rem; }
+      color: var(--dorado-texto); font-weight: 700; margin-bottom: 1.6rem; }
     .bienvenida h1 { font-family: var(--f-titulo); font-weight: 400;
       font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.3; color: var(--texto); max-width: 760px; margin: 0 auto 1.6rem; }
     .bienvenida h1 em { font-style: italic; color: var(--purpura); }
@@ -118,7 +101,7 @@
 
     /* DESTACADO */
     .destacado { padding: 6rem 0; background: var(--marfil-calido); }
-    .sec-eyebrow { text-align: center; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dorado); font-weight: 700; margin-bottom: 0.9rem; }
+    .sec-eyebrow { text-align: center; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dorado-texto); font-weight: 700; margin-bottom: 0.9rem; }
     .destacado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 2.4rem; }
     .destacado-visual { aspect-ratio: 4/5; border-radius: 200px 200px 16px 16px;
       background: linear-gradient(155deg, var(--lavanda) 0%, var(--purpura-cl) 100%);
@@ -128,7 +111,7 @@
       font-family: var(--f-titulo); font-size: 4.5rem; color: rgba(255,255,255,0.5); line-height: 1; }
     .destacado-visual p { font-family: var(--f-serif); font-style: italic; font-size: 1.55rem;
       color: var(--blanco); text-align: center; line-height: 1.5; text-shadow: 0 2px 18px rgba(70,32,92,0.3); position: relative; z-index: 1; }
-    .destacado-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dorado); font-weight: 700; margin-bottom: 1.2rem; }
+    .destacado-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dorado-texto); font-weight: 700; margin-bottom: 1.2rem; }
     .destacado-title { font-family: var(--f-titulo); font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; color: var(--texto); margin-bottom: 1.2rem; }
     .destacado-meta { font-size: 0.78rem; color: var(--texto-suave); margin-bottom: 1.6rem; }
     .destacado-meta span { color: var(--purpura); }
@@ -152,7 +135,7 @@
       background: #EEE5F2; color: var(--purpura-osc); border-bottom: 1px solid rgba(94,45,121,.08); }
     .post-card-body { padding: 1.8rem; display: flex; flex: 1; flex-direction: column; }
     .post-card-foot-wrap { margin-top: auto; }
-    .post-card-cat { font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dorado); font-weight: 700; margin-bottom: 0.7rem; }
+    .post-card-cat { font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dorado-texto); font-weight: 700; margin-bottom: 0.7rem; }
     .post-card-title { font-family: var(--f-titulo); font-weight: 500; font-size: 1.25rem; line-height: 1.3; color: var(--texto); margin-bottom: 0.8rem; }
     .post-card-ex { font-size: 0.9rem; color: var(--texto-suave); line-height: 1.7; margin-bottom: 1.3rem; }
     .post-card-foot { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--marfil-calido); margin-top: auto; }
@@ -176,8 +159,6 @@
       display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem;
       box-shadow: 0 26px 60px rgba(70,32,92,0.16); position: relative; overflow: hidden; }
     .sobre-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .sobre-foto-emoji { font-size: 2.2rem; position: relative; z-index:1; }
-    .sobre-foto-txt { font-family: var(--f-mano); font-size: 1.4rem; color: var(--purpura-osc); position: relative; z-index:1; }
     .sobre-firma { font-family: var(--f-mano); font-size: 2.3rem; color: var(--purpura); margin-bottom: 0.3rem; }
     .sobre h2 { font-family: var(--f-titulo); font-weight: 400; font-size: clamp(1.7rem, 2.8vw, 2.4rem); color: var(--texto); margin-bottom: 1.6rem; line-height: 1.25; }
     .sobre h2 em { font-style: italic; color: var(--purpura); }
@@ -237,9 +218,12 @@
     </div>
   </nav>
 
-  <!-- HERO: banner cabecera a todo el ancho -->
+  <!-- HERO: banner horizontal en desktop, vertical (legible) en móvil -->
   <header class="hero">
-    <img src="assets/banner-header.jpg" alt="Voz y Huella de Mujer — Cada mujer tiene una voz, cada vida deja una huella. by Yamile" class="hero-banner">
+    <picture>
+      <source media="(max-width: 760px)" srcset="assets/banner-portada.jpg">
+      <img src="assets/banner-header.jpg" alt="Voz y Huella de Mujer — Cada mujer tiene una voz, cada vida deja una huella. by Yamile" class="hero-banner">
+    </picture>
     <div class="hero-fade"></div>
   </header>
 
@@ -284,7 +268,7 @@
       <div class="posts-grid">
 
         <article class="post-card reveal">
-          <div class="post-card-top pc1">"La vida no me pedía más velocidad. Me pedía presencia."</div>
+          <div class="post-card-top">"La vida no me pedía más velocidad. Me pedía presencia."</div>
           <div class="post-card-body">
             <p class="post-card-cat">Presencia</p>
             <h3 class="post-card-title">Cuando dejé de correr, empecé a vivir</h3>
@@ -294,7 +278,7 @@
         </article>
 
         <article class="post-card reveal d1">
-          <div class="post-card-top pc2">"¿En qué momento nos dieron permiso para detenernos?"</div>
+          <div class="post-card-top">"¿En qué momento nos dieron permiso para detenernos?"</div>
           <div class="post-card-body">
             <p class="post-card-cat">Paz interior</p>
             <h3 class="post-card-title">El derecho a no hacer</h3>
@@ -304,12 +288,12 @@
         </article>
 
         <article class="post-card reveal d2">
-          <div class="post-card-top pc3">"Recibir, sin sentir que debes devolver algo a cambio."</div>
+          <div class="post-card-top">"Hay sabiduría profunda en quienes aprendieron a escuchar los silencios."</div>
           <div class="post-card-body">
-            <p class="post-card-cat">Gratitud</p>
-            <h3 class="post-card-title">Recibir en gratitud</h3>
-            <p class="post-card-ex">Tengo amigas profundamente generosas. Hoy quiero hablar de lo que aprendí sobre recibir con el corazón abierto.</p>
-            <div class="post-card-foot"><span class="post-card-date">Junio 2026</span><a href="post.html" class="post-card-link">Leer</a></div>
+            <p class="post-card-cat">Autoconocimiento</p>
+            <h3 class="post-card-title">El silencio que habla</h3>
+            <p class="post-card-ex">Vivimos en un mundo que premia el ruido. Pero hay una voz interior que solo aparece cuando aprendemos a callar y escucharnos.</p>
+            <div class="post-card-foot"><span class="post-card-date">Mayo 2026</span><a href="post.html" class="post-card-link">Leer</a></div>
           </div>
         </article>
 
