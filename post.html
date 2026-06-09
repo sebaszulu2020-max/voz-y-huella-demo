@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cuando Dejé de Correr Empecé a Vivir — Voz y Huella de Mujer</title>
+  <link rel="icon" type="image/jpg" href="assets/logo.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
@@ -11,15 +12,16 @@
     html.lenis { height: auto; }
     .lenis.lenis-smooth { scroll-behavior: auto; }
     :root {
-      --terracota:       #C4876B;
-      --terracota-light: #E8C4B0;
-      --salvia:          #8B9E8A;
-      --salvia-light:    #C5D4C4;
-      --dorado:          #D4A97A;
-      --crema:           #FDF8F3;
-      --crema-oscura:    #F5EDE2;
-      --texto:           #3D3530;
-      --texto-suave:     #8A7E78;
+      /* Paleta Voz y Huella de Mujer — violeta/lavanda/dorado (banner de Yamile) */
+      --terracota:       #7B4B8A;
+      --terracota-light: #D8C2E0;
+      --salvia:          #B89BC9;
+      --salvia-light:    #E3D4EC;
+      --dorado:          #C9A961;
+      --crema:           #FBF8FC;
+      --crema-oscura:    #F3EAF7;
+      --texto:           #3D2E42;
+      --texto-suave:     #8A7E90;
       --blanco:          #FFFFFF;
 
       --font-titulo: 'Playfair Display', Georgia, serif;
@@ -48,15 +50,8 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 72px;
     }
-    .logo {
-      font-family: var(--font-titulo); font-size: 1.2rem;
-      font-weight: 600; color: var(--terracota); line-height: 1.2;
-    }
-    .logo span {
-      display: block; font-size: 0.62rem; font-weight: 300;
-      font-family: var(--font-cuerpo); color: var(--texto-suave);
-      letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;
-    }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 60px; width: auto; display: block; }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a {
       font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
@@ -243,7 +238,7 @@
       padding: 0.6rem 1.2rem; border-radius: 2rem;
       font-size: 0.8rem; font-weight: 700; transition: all 0.2s;
     }
-    .share-btn.ig { background: #F3E8E2; color: #C4876B; }
+    .share-btn.ig { background: #F3EAF7; color: #7B4B8A; }
     .share-btn.wa { background: #E8F5E9; color: #2E7D32; }
     .share-btn.fb { background: #E8EDF3; color: #1565C0; }
     .share-btn:hover { transform: translateY(-2px); }
@@ -300,9 +295,9 @@
       padding: 1rem; text-align: center;
       text-shadow: 0 1px 6px rgba(0,0,0,0.2);
     }
-    .rc1 { background: linear-gradient(135deg, #8B9E8A, #C5D4C4); color: var(--texto); text-shadow: none; }
-    .rc2 { background: linear-gradient(135deg, #9E8B76, #C4876B); }
-    .rc3 { background: linear-gradient(135deg, #C4876B, #D4A97A); }
+    .rc1 { background: linear-gradient(135deg, #B89BC9, #E3D4EC); color: var(--texto); text-shadow: none; }
+    .rc2 { background: linear-gradient(135deg, #9E8B76, #7B4B8A); }
+    .rc3 { background: linear-gradient(135deg, #7B4B8A, #C9A961); }
     .related-card-body { padding: 1.25rem; }
     .related-card-body h3 {
       font-family: var(--font-titulo); font-size: 0.95rem;
@@ -330,7 +325,7 @@
     }
     .ca1 { background: var(--terracota-light); }
     .ca2 { background: var(--salvia-light); }
-    .ca3 { background: #F0E6D8; }
+    .ca3 { background: #EFE4D4; }
     .comment-name { font-weight: 700; font-size: 0.88rem; }
     .comment-date { font-size: 0.75rem; color: var(--texto-suave); margin-left: auto; }
     .comment p { font-size: 0.9rem; color: var(--texto-suave); font-weight: 300; line-height: 1.7; }
@@ -357,7 +352,7 @@
       font-family: var(--font-cuerpo); font-size: 0.9rem; font-weight: 700;
       cursor: pointer; transition: background 0.2s;
     }
-    .btn-comment:hover { background: #a8694f; }
+    .btn-comment:hover { background: #5E3A6B; }
 
     /* FOOTER */
     footer {
@@ -395,8 +390,7 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        Voz y Huella de Mujer
-        <span>Tu voz · Tu huella · Tu historia</span>
+        <img src="assets/logo.jpg" alt="Voz y Huella de Mujer">
       </a>
       <div class="nav-links">
         <a href="index.html">← Volver</a>
@@ -653,7 +647,7 @@
     const progress = document.createElement('div');
     progress.style.cssText = `
       position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: linear-gradient(90deg, #C4876B, #D4A97A);
+      background: linear-gradient(90deg, #7B4B8A, #C9A961);
       z-index: 9999; transition: width 0.1s linear;
     `;
     document.body.appendChild(progress);
