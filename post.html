@@ -172,31 +172,11 @@
     .post-card-link { margin-top: auto; font-size: 0.78rem; font-weight: 700; color: var(--purpura); }
     .post-card-link::after { content:' →'; }
 
-    /* COMENTARIOS (demo) */
-    .comentarios { background: var(--blanco); padding: 5rem 2rem; border-top: 1px solid var(--marfil-calido); }
+    /* COMENTARIOS — Disqus */
+    .comentarios { background: var(--blanco); padding: 5rem 2rem 4rem; border-top: 1px solid var(--marfil-calido); }
     .comentarios-inner { max-width: 680px; margin: 0 auto; }
     .comentarios h2 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.5rem; margin-bottom: 2rem; color: var(--texto); }
-    .comentario { padding: 1.5rem 0; border-bottom: 1px solid var(--marfil-calido); }
-    .comentario-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.6rem; }
-    .comentario-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--lavanda-niebla);
-      display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-    .comentario-nombre { font-weight: 700; font-size: 0.88rem; color: var(--texto); }
-    .comentario-fecha { font-size: 0.74rem; color: var(--texto-suave); margin-left: auto; }
-    .comentario p { font-size: 0.92rem; color: var(--texto-suave); line-height: 1.75; }
-    .comentario-form { margin-top: 2.6rem; }
-    .comentario-form h3 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.15rem; margin-bottom: 1.2rem; color: var(--texto); }
-    .form-group { margin-bottom: 1rem; }
-    .form-label { font-size: 0.72rem; font-weight: 700; color: var(--texto-suave);
-      letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; }
-    .form-control { width: 100%; padding: 0.85rem 1.2rem; border: 1px solid var(--lavanda); border-radius: 14px;
-      font-family: var(--f-cuerpo); font-size: 0.92rem; background: var(--marfil); color: var(--texto);
-      outline: none; transition: border-color .3s; }
-    .form-control:focus { border-color: var(--purpura); }
-    textarea.form-control { resize: vertical; min-height: 110px; }
-    .btn-fill { background: var(--purpura); color: var(--blanco); padding: 0.9rem 2.1rem; border: none; cursor: pointer;
-      border-radius: 2rem; font-family: var(--f-cuerpo); font-size: 0.84rem; letter-spacing: 0.05em;
-      transition: background .4s, transform .3s; }
-    .btn-fill:hover { background: var(--purpura-osc); transform: translateY(-2px); }
+    #disqus_thread { min-height: 200px; }
 
     /* FOOTER (idéntico al inicio) */
     footer { background: #2E2233; color: rgba(255,255,255,0.6); padding: 4.5rem 2rem 2.5rem; }
@@ -370,50 +350,12 @@
     </div>
   </section>
 
-  <!-- COMENTARIOS (demo) -->
+  <!-- COMENTARIOS — Disqus real -->
   <section class="comentarios">
     <div class="comentarios-inner">
       <h2>Lo que dice la comunidad</h2>
-
-      <div class="comentario reveal">
-        <div class="comentario-head">
-          <div class="comentario-avatar">🌸</div>
-          <span class="comentario-nombre">María Fernanda</span>
-          <span class="comentario-fecha">Hace 1 día</span>
-        </div>
-        <p>Yo también siento esa "deuda invisible" cuando me regalan algo. Hoy entendí que puedo simplemente decir gracias. Hermoso, Yamile.</p>
-      </div>
-
-      <div class="comentario reveal">
-        <div class="comentario-head">
-          <div class="comentario-avatar">🌿</div>
-          <span class="comentario-nombre">Catalina R.</span>
-          <span class="comentario-fecha">Hace 1 día</span>
-        </div>
-        <p>"Gracias, lo recibo con amor" — me lo llevo para siempre. Cada lunes espero este espacio.</p>
-      </div>
-
-      <div class="comentario reveal">
-        <div class="comentario-head">
-          <div class="comentario-avatar">✨</div>
-          <span class="comentario-nombre">Laura M.</span>
-          <span class="comentario-fecha">Hace 2 días</span>
-        </div>
-        <p>Lo compartí con mis amigas más generosas. Todas necesitábamos leer esto. Qué don el de escribir así.</p>
-      </div>
-
-      <form class="comentario-form reveal">
-        <h3>Deja tu voz aquí</h3>
-        <div class="form-group">
-          <label class="form-label" for="comentario-nombre">Tu nombre</label>
-          <input type="text" id="comentario-nombre" name="nombre" class="form-control" placeholder="¿Cómo te llamas?" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="comentario-texto">Tu comentario</label>
-          <textarea id="comentario-texto" name="comentario" class="form-control" placeholder="¿Qué resonó en ti hoy?" required></textarea>
-        </div>
-        <button type="submit" class="btn-fill">Dejar mi huella ✦</button>
-      </form>
+      <div id="disqus_thread"></div>
+      <noscript>Por favor activa JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios.</a></noscript>
     </div>
   </section>
 
@@ -469,12 +411,19 @@
       window.addEventListener('scroll', () => pintarProgreso(window.scrollY), { passive: true });
     }
 
-    // el formulario es una demo: confirma sin enviar nada
-    const form = document.querySelector('.comentario-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      form.innerHTML = '<p style="font-family:var(--f-serif);font-style:italic;font-size:1.3rem;color:var(--purpura);text-align:center;">Gracias por dejar tu huella 🌷 (demo)</p>';
-    });
+  </script>
+  <script>
+    var disqus_config = function () {
+      this.page.url  = 'https://sebaszulu2020-max.github.io/voz-y-huella-demo/post.html';
+      this.page.identifier = 'recibir-en-gratitud-2026-06-08';
+      this.page.title = 'Recibir en gratitud — Voz y Huella de Mujer';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://voz-y-huella-de-mujer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   </script>
 </body>
 </html>
