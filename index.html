@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voz y Huella de Mujer — by Yamile</title>
-  <link rel="icon" type="image/jpg" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <meta name="description" content="Un espacio para mujeres que eligen vivir con presencia. Reflexiones de Yamile sobre pausa, gratitud y el arte de habitar la propia vida.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;700&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
   <style>
@@ -67,7 +67,7 @@
 
     /* HERO — banner cabecera a todo el ancho, nítido */
     .hero { position: relative; width: 100%; background: var(--marfil); }
-    .hero-banner { width: 100%; display: block; }
+    .hero-banner { width: 100%; height: auto; display: block; }
     .hero-fade { position: absolute; bottom: -1px; left: 0; right: 0; height: 90px;
       background: linear-gradient(transparent, var(--marfil)); pointer-events: none; }
     /* en móvil se usa el banner vertical (portada) — ver <picture> en el HTML */
@@ -222,7 +222,7 @@
   <header class="hero">
     <picture>
       <source media="(max-width: 760px)" srcset="assets/banner-portada.jpg">
-      <img src="assets/banner-header.jpg" alt="Voz y Huella de Mujer — Cada mujer tiene una voz, cada vida deja una huella. by Yamile" class="hero-banner">
+      <img src="assets/banner-header.jpg" width="1280" height="480" fetchpriority="high" alt="Voz y Huella de Mujer — Cada mujer tiene una voz, cada vida deja una huella. by Yamile" class="hero-banner">
     </picture>
     <div class="hero-fade"></div>
   </header>
@@ -373,15 +373,29 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script>
-    const lenis = new Lenis({ lerp: 0.08, smooth: true });
-    function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    const nav = document.getElementById('nav');
-    lenis.on('scroll', ({ scroll }) => nav.classList.toggle('scrolled', scroll > 80));
+    // las animaciones y la nav funcionan aunque el CDN de Lenis no cargue
     const io = new IntersectionObserver((es) => {
       es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const nav = document.getElementById('nav');
+    const onScrollNav = (y) => nav.classList.toggle('scrolled', y > 80);
+    if (typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ lerp: 0.08, smooth: true });
+      function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      lenis.on('scroll', ({ scroll }) => onScrollNav(scroll));
+    } else {
+      window.addEventListener('scroll', () => onScrollNav(window.scrollY), { passive: true });
+    }
+
+    // la carta es una demo: confirma sin enviar nada a ningún lado
+    const form = document.querySelector('.carta-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.innerHTML = '<p style="font-family:var(--f-serif);font-style:italic;font-size:1.3rem;color:var(--purpura);margin:0 auto;">Gracias por unirte 🕊️ Nos leemos el lunes.</p>';
+    });
   </script>
 </body>
 </html>

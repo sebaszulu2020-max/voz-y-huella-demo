@@ -3,664 +3,477 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cuando Dejé de Correr Empecé a Vivir — Voz y Huella de Mujer</title>
-  <link rel="icon" type="image/jpg" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Recibir en gratitud — Voz y Huella de Mujer</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="description" content="Recibir en gratitud también es un acto de amor. Una reflexión de Yamile sobre aprender a recibir con el corazón abierto.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;700&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    .post-title, .post-intro, .post-meta, .post-category { opacity: 0; }
-    html.lenis { height: auto; }
-    .lenis.lenis-smooth { scroll-behavior: auto; }
     :root {
-      /* Paleta Voz y Huella de Mujer — violeta/lavanda/dorado (banner de Yamile) */
-      --terracota:       #7B4B8A;
-      --terracota-light: #D8C2E0;
-      --salvia:          #B89BC9;
-      --salvia-light:    #E3D4EC;
-      --dorado:          #C9A961;
-      --crema:           #FBF8FC;
-      --crema-oscura:    #F3EAF7;
-      --texto:           #3D2E42;
-      --texto-suave:     #8A7E90;
-      --blanco:          #FFFFFF;
-
-      --font-titulo: 'Playfair Display', Georgia, serif;
-      --font-cuerpo: 'Lato', sans-serif;
-      --font-cita:   'Cormorant Garamond', Georgia, serif;
+      --purpura:      #5E2D79;
+      --purpura-osc:  #46205C;
+      --purpura-cl:   #9B6BB0;
+      --lavanda:      #D9C6E4;
+      --lavanda-niebla:#F0E8F5;
+      --dorado:       #C9A25F;
+      --dorado-texto: #97752E;
+      --marfil:       #FAF7F4;
+      --marfil-calido:#F5EEE9;
+      --texto:        #4A4A4A;
+      --texto-suave:  #68616B;
+      --blanco:       #FFFFFF;
+      --f-titulo: 'Playfair Display', Georgia, serif;
+      --f-serif:  'Cormorant Garamond', Georgia, serif;
+      --f-cuerpo: 'Lato', sans-serif;
+      --f-mano:   'Dancing Script', cursive;
+      --sombra: 0 10px 40px rgba(70,32,92,0.08);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-cuerpo);
-      background: var(--crema); color: var(--texto);
-      line-height: 1.7;
-    }
+    html.lenis { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto; }
+    body { font-family: var(--f-cuerpo); background: var(--marfil); color: var(--texto);
+      line-height: 1.8; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
-
-    /* NAV */
-    nav {
-      background: var(--crema);
-      border-bottom: 1px solid var(--crema-oscura);
-      position: sticky; top: 0; z-index: 100;
-      padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
-    }
-    .logo { display: flex; align-items: center; }
-    .logo img { height: 60px; width: auto; display: block; }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a {
-      font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--texto-suave); font-weight: 700; transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--terracota); }
-    .btn-nav {
-      background: var(--terracota); color: var(--blanco) !important;
-      padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.8rem !important;
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--dorado); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
 
-    /* BREADCRUMB */
-    .breadcrumb {
-      background: var(--crema-oscura); padding: 0.75rem 2rem;
-      border-bottom: 1px solid rgba(196,135,107,0.1);
-    }
-    .breadcrumb-inner {
-      max-width: 760px; margin: 0 auto;
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.78rem; color: var(--texto-suave);
-    }
-    .breadcrumb a { color: var(--terracota); }
-    .breadcrumb span { opacity: 0.5; }
+    /* barra de progreso de lectura */
+    .progreso { position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--purpura), var(--dorado)); z-index: 200; }
 
-    /* HERO POST */
-    .post-hero {
-      background: linear-gradient(160deg, var(--crema-oscura) 0%, var(--crema) 100%);
-      padding: 5rem 2rem 4rem;
-    }
-    .post-hero-inner { max-width: 760px; margin: 0 auto; }
-    .post-category {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: var(--crema-oscura); color: var(--terracota);
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.35rem 0.9rem;
-      border-radius: 2rem; margin-bottom: 1.5rem;
-    }
-    .post-title {
-      font-family: var(--font-titulo);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600; line-height: 1.15;
-      color: var(--texto); margin-bottom: 1.5rem;
-    }
-    .post-intro {
-      font-size: 1.15rem; color: var(--texto-suave);
-      font-weight: 300; line-height: 1.85;
-      max-width: 640px; margin-bottom: 2rem;
-    }
-    .post-meta {
-      display: flex; align-items: center; gap: 1.5rem;
-      padding: 1.5rem 0; border-top: 1px solid var(--crema-oscura);
-      border-bottom: 1px solid var(--crema-oscura);
-    }
-    .author-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--terracota-light), var(--salvia-light));
-      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-    }
-    .author-info { flex: 1; }
-    .author-name {
-      font-weight: 700; font-size: 0.9rem; color: var(--texto);
-      display: block; margin-bottom: 0.15rem;
-    }
-    .author-date { font-size: 0.78rem; color: var(--texto-suave); }
-    .post-actions { display: flex; gap: 0.75rem; }
-    .action-btn {
-      display: flex; align-items: center; gap: 0.35rem;
-      background: var(--crema-oscura); border: none; cursor: pointer;
-      padding: 0.5rem 1rem; border-radius: 2rem; font-family: var(--font-cuerpo);
-      font-size: 0.78rem; color: var(--texto-suave); font-weight: 700;
-      transition: all 0.2s;
-    }
-    .action-btn:hover { background: var(--terracota-light); color: var(--terracota); }
+    /* NAV — aquí el logo siempre visible (no hay banner que compita) */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0.6rem 2.5rem; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,247,244,0.92); backdrop-filter: blur(12px);
+      box-shadow: 0 1px 24px rgba(70,32,92,0.07); }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 48px; width: auto; filter: drop-shadow(0 2px 6px rgba(94,45,121,0.2)); }
+    .nav-links { display: flex; gap: 2.2rem; align-items: center; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--purpura-osc); font-weight: 700; opacity: 0.9; transition: opacity .3s, color .3s; }
+    .nav-links a:hover { opacity: 1; color: var(--purpura); }
+    .nav-cta { background: var(--purpura); color: var(--blanco) !important;
+      border-radius: 2rem; padding: 0.5rem 1.3rem !important; opacity: 1 !important;
+      transition: background .4s !important; }
+    .nav-cta:hover { background: var(--purpura-osc); }
 
-    /* IMAGEN BANNER */
-    .post-banner {
-      background: linear-gradient(135deg, var(--terracota) 0%, var(--dorado) 50%, var(--salvia) 100%);
-      height: 380px; display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .post-banner::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15), transparent 60%);
-    }
-    .banner-quote {
-      font-family: var(--font-cita);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-style: italic; color: var(--blanco);
-      text-align: center; max-width: 600px;
-      padding: 2rem; line-height: 1.4;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
-      position: relative; z-index: 1;
-    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .divider { display: flex; align-items: center; justify-content: center; gap: 0.9rem; }
+    .divider::before, .divider::after { content:''; width: 50px; height: 1px; background: var(--lavanda); }
+    .divider span { width: 6px; height: 6px; border-radius: 50%; background: var(--dorado); }
 
-    /* CONTENIDO */
-    .post-body { padding: 4rem 2rem; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1.2s cubic-bezier(.16,.6,.3,1), transform 1.2s cubic-bezier(.16,.6,.3,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal.d1 { transition-delay: .12s; } .reveal.d2 { transition-delay: .24s; }
+
+    /* HERO DEL POST */
+    .post-hero { padding: 9rem 2rem 3.5rem; text-align: center; background: var(--marfil); }
+    .post-miga { font-size: 0.76rem; color: var(--texto-suave); margin-bottom: 2.2rem; }
+    .post-miga a { color: var(--purpura); }
+    .post-miga span { opacity: 0.45; margin: 0 0.5rem; }
+    .post-eyebrow { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--dorado-texto); font-weight: 700; margin-bottom: 1.4rem; }
+    .post-title { font-family: var(--f-titulo); font-weight: 400;
+      font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.2; color: var(--texto);
+      max-width: 740px; margin: 0 auto 1.4rem; }
+    .post-title em { font-style: italic; color: var(--purpura); }
+    .post-intro { font-family: var(--f-serif); font-style: italic; font-size: 1.4rem;
+      color: var(--texto-suave); max-width: 560px; margin: 0 auto 2.2rem; line-height: 1.5; }
+    .post-meta { display: inline-flex; align-items: center; gap: 0.9rem; font-size: 0.82rem; color: var(--texto-suave); }
+    .post-meta img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center top;
+      border: 2px solid var(--lavanda); }
+    .post-meta strong { display: block; color: var(--purpura); font-size: 0.88rem; }
+
+    /* BANNER CITA */
+    .post-banner { margin: 2.6rem auto 0; max-width: 980px; padding: 4.5rem 2rem; text-align: center;
+      border-radius: 18px; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--purpura-osc), var(--purpura) 55%, var(--purpura-cl)); }
+    .post-banner::before { content:''; position: absolute; inset: -20% 0;
+      background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.14), transparent 55%); }
+    .post-banner p { position: relative; font-family: var(--f-serif); font-style: italic;
+      font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.5; color: var(--blanco); max-width: 620px; margin: 0 auto; }
+    @media (max-width: 760px) { .post-banner { border-radius: 0; } }
+
+    /* CUERPO */
+    .post-body { padding: 4.5rem 2rem 3rem; }
     .post-content { max-width: 680px; margin: 0 auto; }
+    .post-content > p { font-size: 1.05rem; line-height: 2; color: var(--texto); margin-bottom: 1.7rem; }
+    .post-content .saludo { font-family: var(--f-mano); font-size: 1.7rem; color: var(--purpura); margin-bottom: 1.4rem; }
+    .post-content > p:nth-of-type(1)::first-letter { font-family: var(--f-titulo); font-size: 3.4rem;
+      color: var(--purpura); float: left; line-height: 0.85; margin: 0.08em 0.12em 0 0; }
+    .post-content h2 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.55rem;
+      color: var(--texto); margin: 3rem 0 1.2rem; }
+    .pull-quote { margin: 2.8rem 0; padding: 1.6rem 2rem; border-left: 3px solid var(--dorado);
+      background: var(--lavanda-niebla); border-radius: 0 14px 14px 0; }
+    .pull-quote p { font-family: var(--f-serif); font-style: italic; font-size: 1.45rem;
+      color: var(--purpura); line-height: 1.5; }
+    .caja-practicas { background: var(--blanco); border: 1px solid rgba(94,45,121,.12);
+      border-radius: 14px; padding: 2.2rem; margin: 2.6rem 0; box-shadow: var(--sombra); }
+    .caja-practicas h3 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.15rem;
+      color: var(--purpura); margin-bottom: 1.1rem; }
+    .caja-practicas ul { list-style: none; }
+    .caja-practicas li { padding: 0.45rem 0 0.45rem 1.6rem; position: relative;
+      font-size: 0.97rem; color: var(--texto-suave); line-height: 1.75; }
+    .caja-practicas li::before { content:'✦'; position: absolute; left: 0; top: 0.5rem;
+      color: var(--dorado-texto); font-size: 0.75rem; }
+    .post-cierre { margin-top: 3rem; padding: 2.6rem 2.2rem; text-align: center;
+      background: var(--marfil-calido); border-radius: 16px; }
+    .post-cierre p { font-family: var(--f-serif); font-style: italic; font-size: 1.3rem;
+      color: var(--texto); line-height: 1.6; margin-bottom: 1.1rem; }
+    .post-cierre .firma { font-family: var(--f-mano); font-style: normal; font-size: 1.9rem; color: var(--purpura); margin: 0; }
+    .post-cierre .pd { font-family: var(--f-cuerpo); font-style: normal; font-size: 0.85rem; color: var(--texto-suave); margin: 1.2rem 0 0; }
 
-    .post-content p {
-      font-size: 1.05rem; line-height: 1.95;
-      color: var(--texto); margin-bottom: 1.75rem;
-      font-weight: 300;
-    }
-    .post-content p:first-child::first-letter {
-      font-family: var(--font-titulo);
-      font-size: 3.5rem; font-weight: 700;
-      color: var(--terracota); float: left;
-      line-height: 0.85; margin-right: 0.1em; margin-top: 0.1em;
-    }
-    .post-content h2 {
-      font-family: var(--font-titulo);
-      font-size: 1.6rem; font-weight: 600;
-      color: var(--texto); margin: 3rem 0 1.25rem;
-    }
-    .pull-quote {
-      border-left: 3px solid var(--terracota);
-      margin: 3rem 0;
-      padding: 1.5rem 2rem;
-      background: var(--crema-oscura);
-      border-radius: 0 12px 12px 0;
-    }
-    .pull-quote p {
-      font-family: var(--font-cita);
-      font-size: 1.4rem; font-style: italic;
-      color: var(--terracota); line-height: 1.5;
-      margin: 0 !important;
-    }
-    .highlight-box {
-      background: var(--blanco);
-      border: 1.5px solid var(--crema-oscura);
-      border-radius: 12px; padding: 2rem;
-      margin: 2.5rem 0;
-    }
-    .highlight-box h3 {
-      font-family: var(--font-titulo);
-      font-size: 1rem; font-weight: 600;
-      color: var(--terracota); margin-bottom: 1rem;
-      letter-spacing: 0.04em;
-    }
-    .highlight-box ul {
-      list-style: none; padding: 0;
-    }
-    .highlight-box ul li {
-      padding: 0.4rem 0 0.4rem 1.5rem;
-      position: relative; font-size: 0.95rem;
-      color: var(--texto-suave); font-weight: 300;
-    }
-    .highlight-box ul li::before {
-      content: '✦'; position: absolute; left: 0;
-      color: var(--terracota); font-size: 0.7rem; top: 0.55rem;
-    }
-    .post-closing {
-      background: linear-gradient(135deg, var(--crema-oscura), var(--crema));
-      border-radius: 16px; padding: 2.5rem;
-      margin-top: 3rem; text-align: center;
-    }
-    .post-closing p {
-      font-family: var(--font-cita);
-      font-size: 1.2rem; font-style: italic;
-      color: var(--texto); margin-bottom: 1rem !important;
-      line-height: 1.6;
-    }
-    .post-closing .firma {
-      font-size: 0.85rem !important; color: var(--terracota) !important;
-      font-family: var(--font-cuerpo) !important; font-style: normal !important;
-      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-    }
-
-    /* COMPARTIR */
-    .share-section {
-      max-width: 680px; margin: 0 auto; padding: 0 0 3rem;
-      text-align: center;
-    }
-    .share-label {
-      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--texto-suave); font-weight: 700; margin-bottom: 1rem;
-      display: block;
-    }
-    .share-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-    .share-btn {
-      display: flex; align-items: center; gap: 0.4rem;
-      padding: 0.6rem 1.2rem; border-radius: 2rem;
-      font-size: 0.8rem; font-weight: 700; transition: all 0.2s;
-    }
-    .share-btn.ig { background: #F3EAF7; color: #7B4B8A; }
-    .share-btn.wa { background: #E8F5E9; color: #2E7D32; }
-    .share-btn.fb { background: #E8EDF3; color: #1565C0; }
-    .share-btn:hover { transform: translateY(-2px); }
+    /* COMPARTIR (demo) */
+    .compartir { text-align: center; padding: 0 2rem 4rem; }
+    .compartir-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--texto-suave); font-weight: 700; display: block; margin-bottom: 1.1rem; }
+    .compartir-btns { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+    .compartir-btn { padding: 0.6rem 1.4rem; border-radius: 2rem; font-size: 0.8rem; font-weight: 700;
+      background: var(--lavanda-niebla); color: var(--purpura); transition: transform .3s, background .3s; }
+    .compartir-btn:hover { transform: translateY(-2px); background: var(--lavanda); }
 
     /* AUTORA */
-    .author-section {
-      background: var(--blanco); padding: 3rem 2rem;
-      border-top: 1px solid var(--crema-oscura);
-      border-bottom: 1px solid var(--crema-oscura);
-    }
-    .author-card {
-      max-width: 680px; margin: 0 auto;
-      display: flex; gap: 2rem; align-items: flex-start;
-    }
-    .author-card-photo {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--terracota-light), var(--salvia-light));
-      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
-    }
-    .author-card-info h3 {
-      font-family: var(--font-titulo); font-size: 1.2rem;
-      font-weight: 600; margin-bottom: 0.2rem;
-    }
-    .author-card-info .author-title {
-      font-size: 0.78rem; color: var(--terracota); font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem;
-    }
-    .author-card-info p {
-      font-size: 0.9rem; color: var(--texto-suave);
-      font-weight: 300; line-height: 1.7;
-    }
+    .autora { background: var(--marfil-calido); padding: 4rem 2rem; }
+    .autora-card { max-width: 680px; margin: 0 auto; display: flex; gap: 2rem; align-items: center; }
+    .autora-card img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
+      object-position: center top; border: 3px solid var(--blanco); box-shadow: var(--sombra); flex-shrink: 0; }
+    .autora-card h3 { font-family: var(--f-mano); font-weight: 500; font-size: 1.7rem; color: var(--purpura); margin-bottom: 0.2rem; }
+    .autora-rol { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--dorado-texto); font-weight: 700; margin-bottom: 0.7rem; }
+    .autora-card p { font-size: 0.92rem; color: var(--texto-suave); line-height: 1.8; }
+    @media (max-width: 600px) { .autora-card { flex-direction: column; text-align: center; } }
 
-    /* POSTS RELACIONADOS */
-    .related { padding: 4rem 2rem; background: var(--crema); }
-    .related-inner { max-width: 1100px; margin: 0 auto; }
-    .related h2 {
-      font-family: var(--font-titulo); font-size: 1.5rem;
-      font-weight: 600; margin-bottom: 2rem; color: var(--texto);
-    }
-    .related-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
-    .related-card {
-      background: var(--blanco); border-radius: 12px; overflow: hidden;
-      box-shadow: 0 2px 12px rgba(61,53,48,0.06);
-      transition: transform 0.2s;
-    }
-    .related-card:hover { transform: translateY(-3px); }
-    .related-card-img {
-      height: 120px; display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-cita); font-style: italic;
-      font-size: 0.9rem; color: var(--blanco);
-      padding: 1rem; text-align: center;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.2);
-    }
-    .rc1 { background: linear-gradient(135deg, #B89BC9, #E3D4EC); color: var(--texto); text-shadow: none; }
-    .rc2 { background: linear-gradient(135deg, #9E8B76, #7B4B8A); }
-    .rc3 { background: linear-gradient(135deg, #7B4B8A, #C9A961); }
-    .related-card-body { padding: 1.25rem; }
-    .related-card-body h3 {
-      font-family: var(--font-titulo); font-size: 0.95rem;
-      font-weight: 600; line-height: 1.3; margin-bottom: 0.5rem;
-    }
-    .related-card-body p {
-      font-size: 0.8rem; color: var(--texto-suave); font-weight: 300; line-height: 1.6;
-    }
+    /* RELACIONADOS */
+    .relacionados { padding: 5.5rem 0; }
+    .sec-eyebrow { text-align: center; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--dorado-texto); font-weight: 700; margin-bottom: 0.9rem; }
+    .sec-title { text-align: center; font-family: var(--f-titulo); font-weight: 400;
+      font-size: clamp(1.7rem, 3vw, 2.3rem); color: var(--texto); margin-bottom: 2.8rem; }
+    .sec-title em { font-style: italic; color: var(--purpura); }
+    .posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.2rem; align-items: stretch; }
+    .post-card { background: var(--blanco); border: 1px solid rgba(94,45,121,.10); border-radius: 8px;
+      overflow: hidden; box-shadow: 0 12px 32px rgba(70,32,92,.07); transition: transform .4s, box-shadow .4s;
+      display: flex; flex-direction: column; }
+    .post-card:hover { transform: translateY(-6px); box-shadow: 0 20px 46px rgba(70,32,92,0.13); }
+    .post-card-top { min-height: 120px; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+      font-family: var(--f-serif); font-style: italic; font-size: 1.12rem; text-align: center; line-height: 1.4;
+      background: #EEE5F2; color: var(--purpura-osc); border-bottom: 1px solid rgba(94,45,121,.08); }
+    .post-card-body { padding: 1.6rem; display: flex; flex: 1; flex-direction: column; }
+    .post-card-cat { font-size: 0.64rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dorado-texto); font-weight: 700; margin-bottom: 0.6rem; }
+    .post-card-title { font-family: var(--f-titulo); font-weight: 500; font-size: 1.18rem; line-height: 1.3; color: var(--texto); margin-bottom: 0.7rem; }
+    .post-card-ex { font-size: 0.88rem; color: var(--texto-suave); line-height: 1.7; margin-bottom: 1.2rem; }
+    .post-card-link { margin-top: auto; font-size: 0.78rem; font-weight: 700; color: var(--purpura); }
+    .post-card-link::after { content:' →'; }
 
-    /* COMENTARIOS PREVIEW */
-    .comments { padding: 4rem 2rem; background: var(--blanco); }
-    .comments-inner { max-width: 680px; margin: 0 auto; }
-    .comments h2 {
-      font-family: var(--font-titulo); font-size: 1.5rem;
-      font-weight: 600; margin-bottom: 2rem;
-    }
-    .comment {
-      padding: 1.5rem 0; border-bottom: 1px solid var(--crema-oscura);
-    }
-    .comment-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
-    .comment-avatar {
-      width: 38px; height: 38px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-    }
-    .ca1 { background: var(--terracota-light); }
-    .ca2 { background: var(--salvia-light); }
-    .ca3 { background: #EFE4D4; }
-    .comment-name { font-weight: 700; font-size: 0.88rem; }
-    .comment-date { font-size: 0.75rem; color: var(--texto-suave); margin-left: auto; }
-    .comment p { font-size: 0.9rem; color: var(--texto-suave); font-weight: 300; line-height: 1.7; }
-    .comment-form { margin-top: 2.5rem; }
-    .comment-form h3 {
-      font-family: var(--font-titulo); font-size: 1.1rem;
-      margin-bottom: 1.25rem;
-    }
+    /* COMENTARIOS (demo) */
+    .comentarios { background: var(--blanco); padding: 5rem 2rem; border-top: 1px solid var(--marfil-calido); }
+    .comentarios-inner { max-width: 680px; margin: 0 auto; }
+    .comentarios h2 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.5rem; margin-bottom: 2rem; color: var(--texto); }
+    .comentario { padding: 1.5rem 0; border-bottom: 1px solid var(--marfil-calido); }
+    .comentario-head { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.6rem; }
+    .comentario-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--lavanda-niebla);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .comentario-nombre { font-weight: 700; font-size: 0.88rem; color: var(--texto); }
+    .comentario-fecha { font-size: 0.74rem; color: var(--texto-suave); margin-left: auto; }
+    .comentario p { font-size: 0.92rem; color: var(--texto-suave); line-height: 1.75; }
+    .comentario-form { margin-top: 2.6rem; }
+    .comentario-form h3 { font-family: var(--f-titulo); font-weight: 500; font-size: 1.15rem; margin-bottom: 1.2rem; color: var(--texto); }
     .form-group { margin-bottom: 1rem; }
-    .form-label { font-size: 0.78rem; font-weight: 700; color: var(--texto-suave);
-      letter-spacing: 0.06em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; }
-    .form-control {
-      width: 100%; padding: 0.85rem 1.1rem;
-      border: 1.5px solid var(--crema-oscura); border-radius: var(--radio);
-      font-family: var(--font-cuerpo); font-size: 0.9rem;
-      background: var(--crema); color: var(--texto); outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-control:focus { border-color: var(--terracota); }
-    textarea.form-control { resize: vertical; min-height: 120px; }
-    .btn-comment {
-      background: var(--terracota); color: var(--blanco);
-      padding: 0.85rem 2rem; border-radius: 2rem; border: none;
-      font-family: var(--font-cuerpo); font-size: 0.9rem; font-weight: 700;
-      cursor: pointer; transition: background 0.2s;
-    }
-    .btn-comment:hover { background: #5E3A6B; }
+    .form-label { font-size: 0.72rem; font-weight: 700; color: var(--texto-suave);
+      letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; }
+    .form-control { width: 100%; padding: 0.85rem 1.2rem; border: 1px solid var(--lavanda); border-radius: 14px;
+      font-family: var(--f-cuerpo); font-size: 0.92rem; background: var(--marfil); color: var(--texto);
+      outline: none; transition: border-color .3s; }
+    .form-control:focus { border-color: var(--purpura); }
+    textarea.form-control { resize: vertical; min-height: 110px; }
+    .btn-fill { background: var(--purpura); color: var(--blanco); padding: 0.9rem 2.1rem; border: none; cursor: pointer;
+      border-radius: 2rem; font-family: var(--f-cuerpo); font-size: 0.84rem; letter-spacing: 0.05em;
+      transition: background .4s, transform .3s; }
+    .btn-fill:hover { background: var(--purpura-osc); transform: translateY(-2px); }
 
-    /* FOOTER */
-    footer {
-      background: var(--texto); color: var(--crema-oscura);
-      padding: 3rem 2rem 2rem;
-      text-align: center;
-    }
-    .footer-logo {
-      font-family: var(--font-titulo); font-size: 1.2rem;
-      color: var(--crema); margin-bottom: 0.75rem;
-    }
-    .footer-tagline {
-      font-family: var(--font-cita); font-style: italic;
-      font-size: 1rem; color: var(--terracota-light);
-      margin-bottom: 1.5rem; display: block;
-    }
-    .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-    .footer-links a { font-size: 0.8rem; color: var(--texto-suave); font-weight: 300; }
-    .footer-links a:hover { color: var(--terracota); }
-    .footer-copy { font-size: 0.75rem; color: var(--texto-suave); }
+    /* FOOTER (idéntico al inicio) */
+    footer { background: #2E2233; color: rgba(255,255,255,0.6); padding: 4.5rem 2rem 2.5rem; }
+    .footer-grid { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; }
+    .footer-logo { font-family: var(--f-titulo); font-size: 1.35rem; color: var(--blanco); margin-bottom: 0.2rem; }
+    .footer-firma { font-family: var(--f-titulo); font-style: italic; letter-spacing: -0.02em; font-size: 1.2rem; color: var(--lavanda); }
+    .footer-desc { font-size: 0.86rem; line-height: 1.85; max-width: 310px; margin-top: 0.6rem; }
+    .footer-col h4 { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--purpura-cl); margin-bottom: 1.1rem; }
+    .footer-col a { display: block; font-size: 0.86rem; margin-bottom: 0.65rem; transition: color .3s; }
+    .footer-col a:hover { color: var(--lavanda); }
+    .footer-base { max-width: 1080px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-base p { font-size: 0.76rem; }
+    .footer-base .tag { font-family: var(--f-serif); font-style: italic; color: var(--lavanda); font-size: 1rem; }
 
-    @media (max-width: 900px) {
-      .related-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+    @media (max-width: 880px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
-    @media (max-width: 600px) {
-      .author-card { flex-direction: column; }
-      .post-meta { flex-wrap: wrap; }
-    }
+    @media (max-width: 520px) { nav { padding: 0.6rem 1.2rem; } .post-hero { padding-top: 7.5rem; } }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <div class="progreso" aria-hidden="true"></div>
+
   <nav>
-    <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.png" alt="Voz y Huella de Mujer">
-      </a>
-      <div class="nav-links">
-        <a href="index.html">← Volver</a>
-        <a href="#">Reflexiones</a>
-        <a href="#">Sobre mí</a>
-        <a href="#">Pídeme un consejo</a>
-        <a href="#" class="btn-nav">Únete</a>
-      </div>
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Voz y Huella de Mujer — Inicio"></a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#reflexiones">Reflexiones</a>
+      <a href="index.html#sobre">Sobre Yamile</a>
+      <a href="index.html#carta" class="nav-cta">Recibe la carta</a>
     </div>
   </nav>
 
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <div class="breadcrumb-inner">
-      <a href="index.html">Inicio</a>
-      <span>›</span>
-      <span>Presencia</span>
-      <span>›</span>
-      <span>Cuando Dejé de Correr Empecé a Vivir</span>
-    </div>
-  </div>
-
   <!-- HERO DEL POST -->
-  <div class="post-hero">
-    <div class="post-hero-inner">
-      <div class="post-category">✦ Presencia &amp; Paz</div>
-      <h1 class="post-title">Cuando Dejé de Correr<br>Empecé a Vivir</h1>
-      <p class="post-intro">No hubo una decisión dramática ni una fecha marcada en el calendario. Fue un susurro interno que se fue haciendo claro con el tiempo.</p>
-      <div class="post-meta">
-        <div class="author-avatar">🌿</div>
-        <div class="author-info">
-          <span class="author-name">Voz y Huella de Mujer</span>
-          <span class="author-date">Lunes, 1 de junio de 2026 · 5 min de lectura</span>
-        </div>
-        <div class="post-actions">
-          <button class="action-btn">♥ Me identifico</button>
-          <button class="action-btn">↗ Compartir</button>
-        </div>
-      </div>
+  <header class="post-hero">
+    <p class="post-miga reveal"><a href="index.html">Inicio</a><span>›</span>Gratitud<span>›</span>Recibir en gratitud</p>
+    <p class="post-eyebrow reveal">la reflexión de esta semana</p>
+    <h1 class="post-title reveal d1">Recibir en <em>gratitud</em></h1>
+    <p class="post-intro reveal d1">Aprender a recibir también es un acto de amor propio.</p>
+    <div class="post-meta reveal d2">
+      <img src="assets/yamile.jpg" alt="Yamile Alvear">
+      <span><strong>Yamile Alvear</strong>Lunes, 8 de junio de 2026 · 5 min de lectura</span>
     </div>
-  </div>
-
-  <!-- BANNER -->
-  <div class="post-banner">
-    <p class="banner-quote">"La vida no me estaba pidiendo más velocidad. Me estaba pidiendo presencia."</p>
-  </div>
+    <div class="post-banner reveal d2">
+      <p>"Aceptar con el corazón abierto honra tanto al que da como al que recibe."</p>
+    </div>
+  </header>
 
   <!-- CONTENIDO -->
-  <div class="post-body">
-    <div class="post-content">
+  <main class="post-body">
+    <article class="post-content">
 
-      <p>Querid@s Lector@s: No recuerdo el día exacto en que dejé de correr. No hubo un anuncio, ni una decisión dramática, ni una fecha marcada en el calendario. Fue más bien un susurro interno que se fue haciendo claro con el tiempo.</p>
+      <p class="saludo reveal">Querid@s lectoras,</p>
 
-      <p>Correr había sido, durante muchos años, mi forma de estar en el mundo. Correr para llegar. Correr para cumplir. Correr para demostrar. Correr para no fallar. Y en esa carrera —que parecía necesaria, incluso virtuosa— dejé muchas cosas atrás: amaneceres sin mirar, silencios sin escuchar, emociones sin habitar, un cuerpo que pedía pausas y una vida que me esperaba con paciencia.</p>
+      <p>En este devenir de la vida, en este caminar cotidiano, a veces nos encontramos con personas especiales. Personas a las que les encanta dar. Dar con alegría, con ligereza, con el corazón abierto.</p>
 
-      <div class="pull-quote" data-aos="fade-right" data-aos-duration="800">
-        <p>"Un día entendí algo simple y profundo: la vida no me estaba pidiendo más velocidad, me estaba pidiendo presencia."</p>
+      <p>¿Te ha pasado que, cuando alguien así aparece en tu camino y te entrega algo —un detalle, un regalo, un gesto—, tú te sientes un poquito comprometida? Como si inmediatamente surgiera la necesidad de devolverlo. Como si recibir viniera con una deuda invisible.</p>
+
+      <p>A mí me ha pasado.</p>
+
+      <p>Tengo amigas profundamente generosas, pero hoy quiero destacar a dos muy especiales: Andre y Adri. En ellas noto algo hermoso: son felices dando. Dar les nace, las expande, las alegra.</p>
+
+      <p>Y ahí es donde aparece mi reto: a mí se me dificulta simplemente recibir. Algo dentro de mí quiere responder rápido, devolver, compensar. Como si aceptar sin más no fuera suficiente.</p>
+
+      <div class="pull-quote reveal">
+        <p>"La vida, con paciencia y amor, me ha ido enseñando otra cosa: no siempre hay que devolver un regalo. Recibir en gratitud también es un acto de amor."</p>
       </div>
 
-      <p>Dejar de correr no significó renunciar a mis sueños, ni a mi vocación, ni a mis responsabilidades. Significó aprender a caminarlos. A habitarlos. A sentirlos mientras los vivía, en lugar de apenas recordarlos después.</p>
+      <p>Y sé que esto nos pasa a muchas. Nos enseñaron sin palabras que recibir puede incomodar, que aceptar nos deja en desventaja, que debemos equilibrar inmediatamente. Pero no. A veces, el único equilibrio necesario es la gratitud.</p>
 
-      <h2>El precio invisible de la prisa</h2>
+      <p>Cuando alguien da con amor, lo más honesto que podemos hacer es recibir con presencia, agradecer, y reconocer que la vida nos está cuidando a través de esa persona.</p>
 
-      <p>Lo que nadie te dice sobre vivir corriendo es que el precio no siempre se cobra en fracasos. A veces se cobra en victorias vacías. Llegas a la meta y no sientes nada. Logras lo que querías y te preguntas: ¿y ahora qué? Porque corrías tan rápido que nunca te detuviste a preguntarte si eso era realmente lo que querías.</p>
+      <h2>Las personas generosas llegan para enseñarnos</h2>
 
-      <div class="highlight-box" data-aos="fade-up" data-aos-duration="700">
-        <h3>Lo que dejé de perder cuando dejé de correr</h3>
+      <p>Creo profundamente que no es casualidad que personas generosas crucen nuestro camino. No llegan solo para darnos cosas o detalles; llegan para enseñarnos. Para mostrarnos que la generosidad existe, que es posible dar sin esperar, sin motivo, sin fecha especial.</p>
+
+      <p>Ellas vienen a recordarnos que también nosotras podemos ser así: generosas sin ocasión, atentas sin razón, presentes solo por el placer de ver al otro sonreír.</p>
+
+      <p>Porque hay algo poderoso en dar sin motivo. Cuando das así, tú eres feliz… pero además logras algo mágico: sorprendes al otro. Y sorprender, creo yo, es una de las capacidades más especiales del ser humano.</p>
+
+      <div class="pull-quote reveal">
+        <p>"Sorprender es tocar el alma del otro sin aviso. Es crear un instante de luz en medio de la rutina. Es decir, sin palabras: te veo, pensé en ti."</p>
+      </div>
+
+      <div class="caja-practicas reveal">
+        <h3>Prácticas sencillas para aprender a recibir en gratitud</h3>
         <ul>
-          <li>Las conversaciones que duran más de lo que "debería"</li>
-          <li>El sabor de la comida cuando la como sin revisar el teléfono</li>
-          <li>Los lunes sin esa angustia de la semana que apenas empieza</li>
-          <li>Mi voz, que se había ido apagando bajo el ruido de la agenda</li>
-          <li>La sensación de ser suficiente, sin tener que demostrar nada</li>
+          <li>Cuando alguien te da algo, evita explicar, justificar o minimizar. Un simple "gracias, lo recibo con amor" es suficiente.</li>
+          <li>Observa qué emoción aparece cuando recibes: incomodidad, culpa, alegría. No la juzgues, solo mírala.</li>
+          <li>Recuerda que recibir no te hace menos generosa; te hace más humana.</li>
+          <li>Agradece también en silencio a la divinidad por poner personas así en tu camino.</li>
+          <li>Practica dar sin motivo: un mensaje, un detalle, una palabra… sin esperar respuesta ni devolución.</li>
         </ul>
       </div>
 
-      <p>No te voy a decir que fue fácil. Soltar la prisa cuando llevas años usándola como identidad duele. Porque te preguntas: ¿quién soy yo si no estoy produciendo? ¿Tengo valor si no me muevo? La respuesta, descubrí, es sí. Un sí enorme.</p>
+      <h2>Reflexionemos juntas</h2>
 
-      <h2>¿Qué significa vivir con presencia?</h2>
+      <p>Recibir en gratitud es un aprendizaje profundo. Es confiar. Es soltar el control. Es permitir que la vida nos ame a través de otros.</p>
 
-      <p>No es meditación obligatoria a las 6am (aunque si te funciona, maravilloso). No es ignorar tus metas o quedarte quieta mientras el mundo avanza. Vivir con presencia es simple —aunque no fácil— y significa esto: estar donde estás, cuando estás.</p>
+      <p>Y cuando aprendemos a recibir así, algo se acomoda dentro. Empezamos a dar desde un lugar más libre, más auténtico, más alegre. Tal vez ese sea el regalo más grande: aprender a recibir… para aprender a dar mejor.</p>
 
-      <p>Es lavarte los dientes sin planear la semana. Es escuchar a quien te habla sin preparar ya tu respuesta. Es sentir tristeza sin apresurarla, y alegría sin desconfiar de ella. Es, como diría mi corazón hace unos años si hubiera sabido expresarse: <em>"Oye, aquí estoy. ¿Me ves?"</em></p>
-
-      <div class="pull-quote" data-aos="fade-right" data-aos-duration="800">
-        <p>"Dejar de correr no fue rendirse. Fue elegir. Y esa elección lo cambió todo."</p>
+      <div class="post-cierre reveal">
+        <p>"Aprender a recibir… para aprender a dar mejor."</p>
+        <p class="firma">Con amor, Yamile</p>
+        <p class="pd">Recuerda, te leo en los comentarios. Juntas hacemos que esta voz se escuche más y más fuerte.</p>
       </div>
 
-      <p>Hoy camino mi vida. Algunos días más rápido, otros más despacio. Pero siempre con los ojos abiertos. Y eso, Querid@s Lector@s, es todo lo que quería contarles esta semana.</p>
+    </article>
+  </main>
 
-      <div class="post-closing">
-        <p>"¿Hay algo en tu vida que llevas corriendo y que quizás ya es hora de empezar a caminar?"</p>
-        <p class="firma">Con presencia y cariño — Voz y Huella de Mujer 🌿</p>
-      </div>
-
+  <!-- COMPARTIR (demo) -->
+  <section class="compartir reveal">
+    <span class="compartir-label">¿Te resonó? Compártelo</span>
+    <div class="compartir-btns">
+      <a href="#" class="compartir-btn" onclick="return false">💬 WhatsApp</a>
+      <a href="#" class="compartir-btn" onclick="return false">📷 Instagram</a>
+      <a href="#" class="compartir-btn" onclick="return false">👥 Facebook</a>
     </div>
-  </div>
-
-  <!-- COMPARTIR -->
-  <div class="share-section">
-    <span class="share-label">¿Te identificaste? Comparte este post</span>
-    <div class="share-btns">
-      <a href="#" class="share-btn ig">📷 Instagram Stories</a>
-      <a href="#" class="share-btn wa">💬 WhatsApp</a>
-      <a href="#" class="share-btn fb">👥 Facebook</a>
-    </div>
-  </div>
+  </section>
 
   <!-- AUTORA -->
-  <div class="author-section">
-    <div class="author-card">
-      <div class="author-card-photo">🌿</div>
-      <div class="author-card-info">
-        <h3>Voz y Huella de Mujer</h3>
-        <p class="author-title">Escritora · Publicando cada lunes desde 2025</p>
-        <p>Un espacio para mujeres que están aprendiendo a vivir con más presencia y menos prisa. No soy psicóloga ni coach — soy una mujer con experiencias reales que comparte lo que va aprendiendo en el camino.</p>
+  <section class="autora">
+    <div class="autora-card reveal">
+      <img src="assets/yamile.jpg" alt="Retrato de Yamile Alvear" loading="lazy">
+      <div>
+        <h3>Yamile Alvear</h3>
+        <p class="autora-rol">Fundadora · Una reflexión cada lunes</p>
+        <p>Apasionada por el crecimiento personal, el liderazgo y las historias que transforman vidas. Creo en el poder de las palabras, en la sabiduría que nace de la experiencia y en la capacidad que tenemos las mujeres de reinventarnos una y otra vez.</p>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- POSTS RELACIONADOS -->
-  <div class="related">
-    <div class="related-inner">
-      <h2>Quizás también te resuene…</h2>
-      <div class="related-grid">
-        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="related-card-img rc1">
-            "¿Y si no encajar es el principio de encontrarte?"
+  <!-- RELACIONADOS -->
+  <section class="relacionados">
+    <div class="wrap">
+      <p class="sec-eyebrow reveal">sigue leyendo</p>
+      <h2 class="sec-title reveal">Quizás también <em>te resuene</em></h2>
+      <div class="posts-grid">
+        <article class="post-card reveal">
+          <div class="post-card-top">"La vida no me pedía más velocidad. Me pedía presencia."</div>
+          <div class="post-card-body">
+            <p class="post-card-cat">Presencia</p>
+            <h3 class="post-card-title">Cuando dejé de correr, empecé a vivir</h3>
+            <p class="post-card-ex">No recuerdo el día exacto en que dejé de correr. Fue un susurro interno que se fue haciendo claro.</p>
+            <a href="post.html" class="post-card-link">Leer</a>
           </div>
-          <div class="related-card-body">
-            <h3>¿Cuándo No Encajas?</h3>
-            <p>Hay momentos en que miras a tu alrededor y sientes que eres demasiado, o demasiado poco...</p>
+        </article>
+        <article class="post-card reveal d1">
+          <div class="post-card-top">"¿En qué momento nos dieron permiso para detenernos?"</div>
+          <div class="post-card-body">
+            <p class="post-card-cat">Paz interior</p>
+            <h3 class="post-card-title">El derecho a no hacer</h3>
+            <p class="post-card-ex">¿Alguna vez te has sentido culpable por no hacer nada? La culpa por no hacer es un esquema impuesto.</p>
+            <a href="post.html" class="post-card-link">Leer</a>
           </div>
-        </a>
-        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="150">
-          <div class="related-card-img rc2">
-            "El descanso no es un premio. Es un derecho."
+        </article>
+        <article class="post-card reveal d2">
+          <div class="post-card-top">"Hay sabiduría profunda en quienes aprendieron a escuchar los silencios."</div>
+          <div class="post-card-body">
+            <p class="post-card-cat">Autoconocimiento</p>
+            <h3 class="post-card-title">El silencio que habla</h3>
+            <p class="post-card-ex">Vivimos en un mundo que premia el ruido. Pero hay una voz interior que solo aparece al callar.</p>
+            <a href="post.html" class="post-card-link">Leer</a>
           </div>
-          <div class="related-card-body">
-            <h3>El Derecho a No Hacer</h3>
-            <p>¿Cuántas veces te has sentido culpable por simplemente descansar?</p>
-          </div>
-        </a>
-        <a href="#" class="related-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="related-card-img rc3">
-            "Tu historia importa, aunque no la vea nadie más."
-          </div>
-          <div class="related-card-body">
-            <h3>El Silencio Que Habla</h3>
-            <p>Vivimos en un mundo que premia el ruido. Pero hay sabiduría en quienes saben escuchar...</p>
-          </div>
-        </a>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- COMENTARIOS -->
-  <div class="comments">
-    <div class="comments-inner">
-      <h2>Lo que dice la comunidad (57 comentarios)</h2>
+  <!-- COMENTARIOS (demo) -->
+  <section class="comentarios">
+    <div class="comentarios-inner">
+      <h2>Lo que dice la comunidad</h2>
 
-      <div class="comment" data-aos="fade-up" data-aos-delay="0">
-        <div class="comment-header">
-          <div class="comment-avatar ca1">🌸</div>
-          <span class="comment-name">María Fernanda</span>
-          <span class="comment-date">Hace 2 días</span>
+      <div class="comentario reveal">
+        <div class="comentario-head">
+          <div class="comentario-avatar">🌸</div>
+          <span class="comentario-nombre">María Fernanda</span>
+          <span class="comentario-fecha">Hace 1 día</span>
         </div>
-        <p>Cada lunes espero este espacio. Hoy me hizo llorar — de esas lágrimas buenas. Gracias por poner en palabras lo que yo no podía decir.</p>
+        <p>Yo también siento esa "deuda invisible" cuando me regalan algo. Hoy entendí que puedo simplemente decir gracias. Hermoso, Yamile.</p>
       </div>
 
-      <div class="comment" data-aos="fade-up" data-aos-delay="150">
-        <div class="comment-header">
-          <div class="comment-avatar ca2">🌿</div>
-          <span class="comment-name">Catalina R.</span>
-          <span class="comment-date">Hace 3 días</span>
+      <div class="comentario reveal">
+        <div class="comentario-head">
+          <div class="comentario-avatar">🌿</div>
+          <span class="comentario-nombre">Catalina R.</span>
+          <span class="comentario-fecha">Hace 1 día</span>
         </div>
-        <p>Llevo meses sintiéndome exactamente así. Correr sin saber bien para qué. Hoy algo hizo clic. Gracias.</p>
+        <p>"Gracias, lo recibo con amor" — me lo llevo para siempre. Cada lunes espero este espacio.</p>
       </div>
 
-      <div class="comment" data-aos="fade-up" data-aos-delay="300">
-        <div class="comment-header">
-          <div class="comment-avatar ca3">✨</div>
-          <span class="comment-name">Laura M.</span>
-          <span class="comment-date">Hace 4 días</span>
+      <div class="comentario reveal">
+        <div class="comentario-head">
+          <div class="comentario-avatar">✨</div>
+          <span class="comentario-nombre">Laura M.</span>
+          <span class="comentario-fecha">Hace 2 días</span>
         </div>
-        <p>Lo compartí con tres amigas. Todas necesitaban leerlo. Qué don el de escribir así.</p>
+        <p>Lo compartí con mis amigas más generosas. Todas necesitábamos leer esto. Qué don el de escribir así.</p>
       </div>
 
-      <div class="comment-form">
+      <form class="comentario-form reveal">
         <h3>Deja tu voz aquí</h3>
         <div class="form-group">
-          <label class="form-label">Tu nombre</label>
-          <input type="text" class="form-control" placeholder="¿Cómo te llamas?">
+          <label class="form-label" for="comentario-nombre">Tu nombre</label>
+          <input type="text" id="comentario-nombre" name="nombre" class="form-control" placeholder="¿Cómo te llamas?" required>
         </div>
         <div class="form-group">
-          <label class="form-label">Tu comentario</label>
-          <textarea class="form-control" placeholder="¿Qué resonó en ti hoy?"></textarea>
+          <label class="form-label" for="comentario-texto">Tu comentario</label>
+          <textarea id="comentario-texto" name="comentario" class="form-control" placeholder="¿Qué resonó en ti hoy?" required></textarea>
         </div>
-        <button class="btn-comment">Dejar mi huella ✦</button>
-      </div>
+        <button type="submit" class="btn-fill">Dejar mi huella ✦</button>
+      </form>
     </div>
-  </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Voz y Huella de Mujer</div>
-    <span class="footer-tagline">"Tu voz. Tu huella. Tu historia."</span>
-    <div class="footer-links">
-      <a href="index.html">Inicio</a>
-      <a href="#">Reflexiones</a>
-      <a href="#">Sobre mí</a>
-      <a href="#">Pídeme un consejo</a>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Voz y Huella de Mujer</div>
+        <div class="footer-firma">by Yamile</div>
+        <p class="footer-desc">Un espacio para mujeres que están aprendiendo a vivir con más presencia y menos prisa.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <a href="index.html#reflexiones">Reflexiones</a>
+        <a href="#">Presencia</a>
+        <a href="#">Gratitud</a>
+        <a href="#">Paz interior</a>
+      </div>
+      <div class="footer-col">
+        <h4>Conectar</h4>
+        <a href="index.html#sobre">Sobre Yamile</a>
+        <a href="#">Pídeme un consejo</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
     </div>
-    <p class="footer-copy">© 2026 Voz y Huella de Mujer · Todos los derechos reservados</p>
+    <div class="footer-base">
+      <p>© 2026 Voz y Huella de Mujer · by Yamile</p>
+      <p class="tag">Cada mujer tiene una voz. Cada vida deja una huella.</p>
+    </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script>
-    // ── 1. LENIS — scroll suave ──
-    const lenis = new Lenis({ lerp: 0.08, smooth: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+    // las animaciones funcionan aunque el CDN de Lenis no cargue
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // ── 2. GSAP — entrada del hero del post ──
-    gsap.registerPlugin(ScrollTrigger);
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl
-      .to('.post-category', { opacity: 1, y: 0, duration: 0.6, from: { y: 16 } })
-      .to('.post-title',    { opacity: 1, y: 0, duration: 1.0, from: { y: 50 } }, '-=0.3')
-      .to('.post-intro',    { opacity: 1, y: 0, duration: 0.7, from: { y: 20 } }, '-=0.5')
-      .to('.post-meta',     { opacity: 1, y: 0, duration: 0.6, from: { y: 16 } }, '-=0.4');
+    // barra de progreso de lectura
+    const barra = document.querySelector('.progreso');
+    const pintarProgreso = (y) => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      barra.style.width = (total > 0 ? (y / total) * 100 : 0) + '%';
+    };
+    if (typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ lerp: 0.08, smooth: true });
+      function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      lenis.on('scroll', ({ scroll }) => pintarProgreso(scroll));
+    } else {
+      window.addEventListener('scroll', () => pintarProgreso(window.scrollY), { passive: true });
+    }
 
-    // ── 3. Parallax en el banner ──
-    gsap.to('.post-banner', {
-      yPercent: -15,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.post-banner',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      }
-    });
-
-    // ── 4. Línea de progreso de lectura ──
-    const progress = document.createElement('div');
-    progress.style.cssText = `
-      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: linear-gradient(90deg, #7B4B8A, #C9A961);
-      z-index: 9999; transition: width 0.1s linear;
-    `;
-    document.body.appendChild(progress);
-    lenis.on('scroll', ({ progress: p }) => {
-      progress.style.width = (p * 100) + '%';
-    });
-
-    // ── 5. AOS ──
-    AOS.init({
-      duration: 700,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 60
+    // el formulario es una demo: confirma sin enviar nada
+    const form = document.querySelector('.comentario-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.innerHTML = '<p style="font-family:var(--f-serif);font-style:italic;font-size:1.3rem;color:var(--purpura);text-align:center;">Gracias por dejar tu huella 🌷 (demo)</p>';
     });
   </script>
 </body>
